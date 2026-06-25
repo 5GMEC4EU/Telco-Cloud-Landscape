@@ -1,0 +1,531 @@
+[
+  {
+    "slug": "deutsche-telekom",
+    "name": "Deutsche Telekom",
+    "cluster": "telco",
+    "layer": 3,
+    "country": "DE",
+    "tag": "DE - Co-initiator",
+    "lede": "Driving force behind the European Edge Continuum and an IPCEI-CIS lead project.",
+    "facts": [
+      "Co-initiator of the first federated European edge cloud, shown live at MWC 2026 with Orange, Telefonica, TIM and Vodafone.",
+      "Leads a direct IPCEI-CIS project and is engaged in the planned IPCEI-AI.",
+      "Runs the Open Telekom Cloud via T-Systems and targets a central role in Europe's industrial AI cloud."
+    ],
+    "link": "https://www.telekom.com"
+  },
+  {
+    "slug": "orange",
+    "name": "Orange",
+    "cluster": "telco",
+    "layer": 3,
+    "country": "FR",
+    "tag": "FR - Federation",
+    "lede": "French operator in the federated European edge alliance.",
+    "facts": [
+      "One of the five operators in the federated European Edge Continuum demo.",
+      "Runs its own direct project inside IPCEI-CIS / the 8ra initiative."
+    ],
+    "link": "https://www.orange.com"
+  },
+  {
+    "slug": "telefonica",
+    "name": "Telefonica",
+    "cluster": "telco",
+    "layer": 3,
+    "country": "ES",
+    "tag": "ES - Edge rollout",
+    "lede": "Spanish operator with an active edge rollout and an IPCEI lead project.",
+    "facts": [
+      "Partner in the federated European edge cloud.",
+      "Has begun deploying edge nodes across Spain.",
+      "Leads a direct IPCEI-CIS project within 8ra."
+    ],
+    "link": "https://www.telefonica.com"
+  },
+  {
+    "slug": "tim",
+    "name": "TIM (Telecom Italia)",
+    "cluster": "telco",
+    "layer": 3,
+    "country": "IT",
+    "tag": "IT - Federation",
+    "lede": "Italian operator in the European edge federation.",
+    "facts": [
+      "One of the five federated network operators.",
+      "Leads a direct IPCEI-CIS project."
+    ],
+    "link": "https://www.gruppotim.it"
+  },
+  {
+    "slug": "vodafone",
+    "name": "Vodafone",
+    "cluster": "telco",
+    "layer": 3,
+    "country": "UK",
+    "tag": "UK - Federation",
+    "lede": "UK-based, pan-European operator in the federated edge alliance.",
+    "facts": [
+      "Among the five operators that federated their edge environments across Europe for the first time.",
+      "Enables application deployment through a single entry point across its European footprint.",
+      "Headquartered in Newbury, UK, with major European operations (Germany and others)."
+    ],
+    "link": "https://www.vodafone.com"
+  },
+  {
+    "slug": "edgex-foundry",
+    "name": "EdgeX Foundry",
+    "cluster": "platform",
+    "layer": 4,
+    "country": "INT",
+    "tag": "LF Edge - IoT",
+    "lede": "Vendor-neutral microservices framework bridging OT devices to applications and cloud.",
+    "facts": [
+      "Hardware- and OS-agnostic; connects sensors speaking Modbus, BACnet, MQTT, BLE and more.",
+      "Loosely-coupled, plug-and-play services for ingestion, normalisation and export.",
+      "An LF Edge Impact-stage (most mature) project."
+    ],
+    "link": "https://www.edgexfoundry.org"
+  },
+  {
+    "slug": "k3s",
+    "name": "K3s",
+    "cluster": "platform",
+    "layer": 3,
+    "country": "INT",
+    "tag": "CNCF - lightweight K8s",
+    "lede": "Lightweight, CNCF-certified Kubernetes distribution for the edge.",
+    "facts": [
+      "Single small binary with a minimal footprint, originated at Rancher / SUSE.",
+      "Ideal for edge gateways, constrained sites and far-edge clusters."
+    ],
+    "link": "https://k3s.io"
+  },
+  {
+    "slug": "kubeedge",
+    "name": "KubeEdge",
+    "cluster": "platform",
+    "layer": 3,
+    "country": "INT",
+    "tag": "CNCF",
+    "lede": "CNCF project extending Kubernetes natively to the edge.",
+    "facts": [
+      "Keeps the control plane in the cloud while edge nodes run autonomously offline.",
+      "Synchronises networking, app deployment and metadata across cloud and edge.",
+      "Widely used for telco and industrial edge."
+    ],
+    "link": "https://kubeedge.io"
+  },
+  {
+    "slug": "kubernetes",
+    "name": "Kubernetes (CNCF)",
+    "cluster": "platform",
+    "layer": 1,
+    "country": "INT",
+    "tag": "CNCF - foundation",
+    "lede": "The de-facto container orchestration foundation of the cloud-edge continuum.",
+    "facts": [
+      "Edge variants (K3s, KubeEdge, OpenYurt) adapt it for constrained, distributed sites.",
+      "Increasingly the common substrate for apps, AI and virtualised infrastructure - in the cloud and at the edge."
+    ],
+    "link": "https://kubernetes.io"
+  },
+  {
+    "slug": "lf-edge",
+    "name": "LF Edge",
+    "cluster": "platform",
+    "layer": 3,
+    "country": "INT",
+    "tag": "Linux Foundation",
+    "lede": "Linux Foundation umbrella for open, interoperable edge - independent of hardware, cloud or OS.",
+    "facts": [
+      "Hosts ~16 projects across telecom, IoT, industrial and transportation edge.",
+      "Portfolio includes EdgeX Foundry, EVE, Akraino, Fledge and Open Horizon.",
+      "Provides blueprints and a shared taxonomy for the open edge stack."
+    ],
+    "link": "https://lfedge.org"
+  },
+  {
+    "slug": "openyurt",
+    "name": "OpenYurt",
+    "cluster": "platform",
+    "layer": 2,
+    "country": "INT",
+    "tag": "CNCF",
+    "lede": "Extends Kubernetes to the edge without changing its APIs.",
+    "facts": [
+      "Originated at Alibaba; a CNCF project for large edge-node fleets.",
+      "YurtHub caches the K8s API locally for disconnected nodes; YurtTunnel handles NAT/firewalled sites.",
+      "Integrates with EdgeX Foundry for device management."
+    ],
+    "link": "https://openyurt.io"
+  },
+  {
+    "slug": "project-eve",
+    "name": "Project EVE",
+    "cluster": "platform",
+    "layer": 4,
+    "country": "INT",
+    "tag": "LF Edge - Edge OS",
+    "lede": "Open Linux-based operating system (EVE-OS) for distributed edge computing.",
+    "facts": [
+      "Reached LF Edge Impact stage in 2025 with new multi-node support.",
+      "Aims to be a common platform for the edge, much like Android was for mobile.",
+      "Runs containers, VMs and clusters on diverse far-edge hardware."
+    ],
+    "link": "https://www.lfedge.org/projects/eve/"
+  },
+  {
+    "slug": "starlingx",
+    "name": "StarlingX",
+    "cluster": "platform",
+    "layer": 2,
+    "country": "INT",
+    "tag": "OpenInfra",
+    "lede": "Complete cloud-infrastructure stack for the edge.",
+    "facts": [
+      "Bare-metal, VM and container workloads in one distributed edge platform.",
+      "Built for telecom, industrial IoT and ultra-low-latency use cases.",
+      "Governed by the OpenInfra Foundation."
+    ],
+    "link": "https://www.starlingx.io"
+  },
+  {
+    "slug": "canonical",
+    "name": "Canonical (Ubuntu)",
+    "cluster": "orch",
+    "layer": 2,
+    "country": "UK",
+    "tag": "UK - Ubuntu / OpenStack",
+    "lede": "Maker of Ubuntu with open building blocks for private and edge clouds.",
+    "facts": [
+      "MicroK8s and Sunbeam / Charmed OpenStack as the base for sovereign self-operated clouds.",
+      "UK-based - European, but outside the EU."
+    ],
+    "link": "https://canonical.com"
+  },
+  {
+    "slug": "kubermatic",
+    "name": "Kubermatic",
+    "cluster": "orch",
+    "layer": 2,
+    "country": "DE",
+    "tag": "DE - KKP / KubeOne",
+    "lede": "German Kubernetes-automation vendor from data center to edge.",
+    "facts": [
+      "KKP and KubeOne operate thousands of clusters consistently.",
+      "Spans bare metal, core data center and edge without oversized ops teams.",
+      "Positions Kubernetes as a sovereign operational substrate for apps and AI."
+    ],
+    "link": "https://www.kubermatic.com"
+  },
+  {
+    "slug": "nextcloud",
+    "name": "Nextcloud",
+    "cluster": "orch",
+    "layer": 4,
+    "country": "DE",
+    "tag": "DE - Collaboration",
+    "lede": "German open-source platform for sovereign collaboration and file storage.",
+    "facts": [
+      "A sovereign alternative to US SaaS for files, communication and office.",
+      "Runs on-premises or at EU providers - data stays under your own control."
+    ],
+    "link": "https://nextcloud.com"
+  },
+  {
+    "slug": "opennebula",
+    "name": "OpenNebula",
+    "cluster": "orch",
+    "layer": 3,
+    "country": "ES",
+    "tag": "ES - Telco edge cloud",
+    "lede": "Open-source platform for carrier-grade telco edge clouds, unifying VNFs, CNFs and AI workloads from core to edge.",
+    "facts": [
+      "Manages virtualized and containerized network functions plus AI workloads with multi-tenancy and no vendor lock-in.",
+      "Official Sylva Validation Platform - the Linux Foundation Europe telco-cloud standard backed by Orange, Deutsche Telekom, Telefonica, Vodafone and TIM.",
+      "Built for 5G neutral host, vRAN / AI-RAN, distributed NFV and 6G pilots, and for sovereign multi-tenant 'Telco AI Factories'.",
+      "From OpenNebula Systems (Spain); contributor to European IPCEI-CIS edge projects."
+    ],
+    "link": "https://opennebula.io/ai-ready-telco-edge-cloud/"
+  },
+  {
+    "slug": "sap",
+    "name": "SAP",
+    "cluster": "orch",
+    "layer": 1,
+    "country": "DE",
+    "tag": "DE - Delos Cloud",
+    "lede": "Enterprise-software leader and IPCEI-CIS partner with its own sovereignty cloud.",
+    "facts": [
+      "A direct IPCEI-CIS project partner.",
+      "Runs Delos Cloud (on Microsoft technology) as a sovereign cloud for German public administration."
+    ],
+    "link": "https://www.sap.com"
+  },
+  {
+    "slug": "sovereign-cloud-stack",
+    "name": "Sovereign Cloud Stack (SCS)",
+    "cluster": "orch",
+    "layer": 1,
+    "country": "DE",
+    "tag": "DE - Open source",
+    "lede": "Standardised open-source stack for sovereign clouds, funded by the German government.",
+    "facts": [
+      "Built on OpenStack and Kubernetes, with no proprietary dependencies.",
+      "Targeted at public administration and critical infrastructure.",
+      "GitOps-friendly and fully declarative as a basis for provider-independent clouds."
+    ],
+    "link": "https://scs.community"
+  },
+  {
+    "slug": "suse",
+    "name": "SUSE",
+    "cluster": "orch",
+    "layer": 2,
+    "country": "LU",
+    "tag": "LU/DE - Rancher / RKE2",
+    "lede": "European open-source vendor for sovereign Kubernetes management.",
+    "facts": [
+      "Rancher Prime and the hardened RKE2 distribution manage clusters with European governance.",
+      "Building a European Sovereign Stack of Linux and Kubernetes together with evroc.",
+      "Stewards the lightweight K3s distribution for the edge.",
+      "Domiciled in Luxembourg (SUSE S.A.) with roots and core engineering in Nuremberg, Germany; owned by Sweden's EQT."
+    ],
+    "link": "https://www.suse.com"
+  },
+  {
+    "slug": "adlink",
+    "name": "ADLINK",
+    "cluster": "hardware",
+    "layer": 3,
+    "country": "TW",
+    "tag": "MEC platforms",
+    "lede": "Edge computing platforms and MEC-ready servers.",
+    "facts": [
+      "Ruggedised hardware for telecom and industrial edge.",
+      "Carrier-grade and embedded systems for network-edge workloads."
+    ],
+    "link": "https://www.adlinktech.com"
+  },
+  {
+    "slug": "advantech",
+    "name": "Advantech",
+    "cluster": "hardware",
+    "layer": 4,
+    "country": "TW",
+    "tag": "Industrial edge",
+    "lede": "Industrial and edge computing hardware for IoT and the far edge.",
+    "facts": [
+      "Ruggedised edge servers, gateways and IoT controllers.",
+      "Widely deployed in manufacturing, transport and energy verticals."
+    ],
+    "link": "https://www.advantech.com"
+  },
+  {
+    "slug": "arm",
+    "name": "Arm",
+    "cluster": "hardware",
+    "layer": 4,
+    "country": "UK",
+    "tag": "UK - Architecture",
+    "lede": "Processor architecture powering most edge and device silicon.",
+    "facts": [
+      "Energy-efficient compute from gateways down to far-edge sensors.",
+      "Licensed broadly across edge SoC and appliance makers."
+    ],
+    "link": "https://www.arm.com"
+  },
+  {
+    "slug": "kontron",
+    "name": "Kontron",
+    "cluster": "hardware",
+    "layer": 3,
+    "country": "AT",
+    "tag": "AT - Edge servers",
+    "lede": "European maker of edge servers and carrier-grade MEC appliances.",
+    "facts": [
+      "Embedded and network-edge hardware for telecom and industrial sites.",
+      "Supplies ruggedised compute for far-edge and on-prem deployments.",
+      "Headquartered in Linz, Austria (the former S&T AG), with significant embedded-computing operations in Germany."
+    ],
+    "link": "https://www.kontron.com"
+  },
+  {
+    "slug": "siemens",
+    "name": "Siemens",
+    "cluster": "hardware",
+    "layer": 4,
+    "country": "DE",
+    "tag": "DE - Industrial Edge",
+    "lede": "Industrial Edge platform and hardware for factories and automation.",
+    "facts": [
+      "A direct IPCEI-CIS project partner.",
+      "Brings compute directly to production lines and machinery at the far edge."
+    ],
+    "link": "https://www.siemens.com"
+  },
+  {
+    "slug": "evroc",
+    "name": "evroc",
+    "cluster": "infra",
+    "layer": 1,
+    "country": "SE",
+    "tag": "SE - Hyperscale-sovereign",
+    "lede": "Swedish newcomer building what it calls Europe's first hyperscale sovereign cloud.",
+    "facts": [
+      "Positions itself as a hyperscale sovereign cloud with a fully European operational footprint.",
+      "Partners with SUSE for a fully sovereign Linux and Kubernetes stack (Sovereign Rancher).",
+      "Control-plane and metadata stay within EU jurisdiction."
+    ],
+    "link": "https://evroc.com"
+  },
+  {
+    "slug": "hetzner",
+    "name": "Hetzner",
+    "cluster": "infra",
+    "layer": 1,
+    "country": "DE",
+    "tag": "DE - Price/perf",
+    "lede": "Cost-efficient European infrastructure with a deliberately lean portfolio.",
+    "facts": [
+      "EU-compliant infrastructure at strong price-performance.",
+      "Offers no managed services by design.",
+      "Popular for self-managed Kubernetes clusters."
+    ],
+    "link": "https://www.hetzner.com"
+  },
+  {
+    "slug": "ionos",
+    "name": "IONOS",
+    "cluster": "infra",
+    "layer": 1,
+    "country": "DE",
+    "tag": "DE - Mid-market",
+    "lede": "Pragmatic cloud provider (United Internet) with German data residency.",
+    "facts": [
+      "Based in Montabaur, part of United Internet.",
+      "Wide GPU choice including Intel Gaudi as a non-NVIDIA option.",
+      "Strong in the mid-market with predictable pricing and human support."
+    ],
+    "link": "https://www.ionos.com"
+  },
+  {
+    "slug": "ovhcloud",
+    "name": "OVHcloud",
+    "cluster": "infra",
+    "layer": 1,
+    "country": "FR",
+    "tag": "FR - SEAL-3",
+    "lede": "Broadest European sovereignty cloud with deep certification.",
+    "facts": [
+      "Around 43 data centres across nine countries.",
+      "SecNumCloud qualification and SEAL-3, the top tier of the EU Cloud Sovereignty Framework.",
+      "Involved in the ECB digital-euro framework and runs a dedicated defence unit."
+    ],
+    "link": "https://www.ovhcloud.com"
+  },
+  {
+    "slug": "scaleway",
+    "name": "Scaleway",
+    "cluster": "infra",
+    "layer": 1,
+    "country": "FR",
+    "tag": "FR - iliad",
+    "lede": "Developer- and AI-focused sovereign cloud provider from France.",
+    "facts": [
+      "Bare metal, GPU instances and OpenAI-compatible inference APIs.",
+      "Reached SEAL-3 and won a standalone Cloud III slot.",
+      "Member of the 2026 EUR 180M EU framework deal."
+    ],
+    "link": "https://www.scaleway.com"
+  },
+  {
+    "slug": "stackit",
+    "name": "STACKIT",
+    "cluster": "infra",
+    "layer": 1,
+    "country": "DE",
+    "tag": "DE - Schwarz Group",
+    "lede": "Sovereign cloud of the Schwarz Group (Lidl/Kaufland), focused on industry and retail.",
+    "facts": [
+      "Reached SEAL-3 in the EU Cloud Sovereignty Framework.",
+      "Customer base weighted toward large industrial and retail buyers.",
+      "Part of the EUR 180M EU framework deal (April 2026) with Scaleway, Post Telecom and Proximus."
+    ],
+    "link": "https://www.stackit.de"
+  },
+  {
+    "slug": "t-systems-otc",
+    "name": "T-Systems / Open Telekom Cloud",
+    "cluster": "infra",
+    "layer": 1,
+    "country": "DE",
+    "tag": "DE - BSI C5",
+    "lede": "Deutsche Telekom's enterprise cloud for regulated customers.",
+    "facts": [
+      "The most enterprise-formal of the large EU sovereignty clouds.",
+      "BSI C5 attestation as a procurement prerequisite for regulated workloads."
+    ],
+    "link": "https://www.t-systems.com"
+  },
+  {
+    "slug": "8ra-ipcei-cis",
+    "name": "8ra / IPCEI-CIS",
+    "cluster": "std",
+    "layer": 2,
+    "country": "EU",
+    "tag": "EU - 12 states",
+    "lede": "The EU funding project for a multi-provider cloud-edge continuum - the federating backbone.",
+    "facts": [
+      "12 member states, ~120-150 industry and research partners, 19 direct projects.",
+      "EUR 1.2B of public funding, approved by the European Commission in late 2023.",
+      "The Lab8ra testbed links 14 organisations across five countries.",
+      "Contributes to the EU goal of 10,000 edge nodes by 2030 - provider-independent and federated."
+    ],
+    "link": "https://www.8ra.com"
+  },
+  {
+    "slug": "etsi-mec",
+    "name": "ETSI MEC",
+    "cluster": "std",
+    "layer": 3,
+    "country": "EU",
+    "tag": "MEC standard",
+    "lede": "The standards body that defines Multi-access Edge Computing.",
+    "facts": [
+      "ETSI's MEC ISG specifies the MEC reference architecture and service APIs.",
+      "Makes operator-edge applications portable and interoperable across networks.",
+      "The technical backbone of the 5G + MEC ecosystem."
+    ],
+    "link": "https://www.etsi.org/technologies/multi-access-edge-computing"
+  },
+  {
+    "slug": "gaia-x",
+    "name": "Gaia-X",
+    "cluster": "std",
+    "layer": 1,
+    "country": "EU",
+    "tag": "EU - Framework",
+    "lede": "European framework for federated, sovereign cloud and data infrastructure.",
+    "facts": [
+      "Standards for interoperability, portability and compliance.",
+      "A reference framework that sovereign providers align to."
+    ],
+    "link": "https://gaia-x.eu"
+  },
+  {
+    "slug": "gsma-open-gateway",
+    "name": "GSMA Open Gateway / CAMARA",
+    "cluster": "std",
+    "layer": 3,
+    "country": "INT",
+    "tag": "Telco APIs",
+    "lede": "Standardised network and edge APIs from the mobile industry.",
+    "facts": [
+      "Unifies developer access to carrier and edge capabilities across operators.",
+      "Makes telco-edge functions programmable and consumable by applications."
+    ],
+    "link": "https://www.gsma.com/solutions-and-impact/gsma-open-gateway/"
+  }
+]
