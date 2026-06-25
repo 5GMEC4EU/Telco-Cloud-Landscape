@@ -1,0 +1,14 @@
+{
+  "slug": "gsma-open-gateway",
+  "name": "GSMA Open Gateway / CAMARA",
+  "cluster": "std",
+  "layer": 3,
+  "country": "INT",
+  "tag": "Telco APIs",
+  "lede": "Standardised network and edge APIs from the mobile industry.",
+  "facts": [
+    "Unifies developer access to carrier and edge capabilities across operators.",
+    "Makes telco-edge functions programmable and consumable by applications."
+  ],
+  "link": "https://www.gsma.com/solutions-and-impact/gsma-open-gateway/"
+}

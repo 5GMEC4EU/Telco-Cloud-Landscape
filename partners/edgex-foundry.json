@@ -1,0 +1,15 @@
+{
+  "slug": "edgex-foundry",
+  "name": "EdgeX Foundry",
+  "cluster": "platform",
+  "layer": 4,
+  "country": "INT",
+  "tag": "LF Edge - IoT",
+  "lede": "Vendor-neutral microservices framework bridging OT devices to applications and cloud.",
+  "facts": [
+    "Hardware- and OS-agnostic; connects sensors speaking Modbus, BACnet, MQTT, BLE and more.",
+    "Loosely-coupled, plug-and-play services for ingestion, normalisation and export.",
+    "An LF Edge Impact-stage (most mature) project."
+  ],
+  "link": "https://www.edgexfoundry.org"
+}

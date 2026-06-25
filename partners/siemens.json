@@ -1,0 +1,14 @@
+{
+  "slug": "siemens",
+  "name": "Siemens",
+  "cluster": "hardware",
+  "layer": 4,
+  "country": "DE",
+  "tag": "DE - Industrial Edge",
+  "lede": "Industrial Edge platform and hardware for factories and automation.",
+  "facts": [
+    "A direct IPCEI-CIS project partner.",
+    "Brings compute directly to production lines and machinery at the far edge."
+  ],
+  "link": "https://www.siemens.com"
+}

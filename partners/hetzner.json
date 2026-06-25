@@ -1,0 +1,15 @@
+{
+  "slug": "hetzner",
+  "name": "Hetzner",
+  "cluster": "infra",
+  "layer": 1,
+  "country": "DE",
+  "tag": "DE - Price/perf",
+  "lede": "Cost-efficient European infrastructure with a deliberately lean portfolio.",
+  "facts": [
+    "EU-compliant infrastructure at strong price-performance.",
+    "Offers no managed services by design.",
+    "Popular for self-managed Kubernetes clusters."
+  ],
+  "link": "https://www.hetzner.com"
+}

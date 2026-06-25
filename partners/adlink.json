@@ -1,0 +1,14 @@
+{
+  "slug": "adlink",
+  "name": "ADLINK",
+  "cluster": "hardware",
+  "layer": 3,
+  "country": "TW",
+  "tag": "MEC platforms",
+  "lede": "Edge computing platforms and MEC-ready servers.",
+  "facts": [
+    "Ruggedised hardware for telecom and industrial edge.",
+    "Carrier-grade and embedded systems for network-edge workloads."
+  ],
+  "link": "https://www.adlinktech.com"
+}

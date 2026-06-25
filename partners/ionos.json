@@ -1,0 +1,15 @@
+{
+  "slug": "ionos",
+  "name": "IONOS",
+  "cluster": "infra",
+  "layer": 1,
+  "country": "DE",
+  "tag": "DE - Mid-market",
+  "lede": "Pragmatic cloud provider (United Internet) with German data residency.",
+  "facts": [
+    "Based in Montabaur, part of United Internet.",
+    "Wide GPU choice including Intel Gaudi as a non-NVIDIA option.",
+    "Strong in the mid-market with predictable pricing and human support."
+  ],
+  "link": "https://www.ionos.com"
+}

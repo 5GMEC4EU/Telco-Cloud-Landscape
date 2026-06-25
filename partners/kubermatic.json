@@ -1,0 +1,15 @@
+{
+  "slug": "kubermatic",
+  "name": "Kubermatic",
+  "cluster": "orch",
+  "layer": 2,
+  "country": "DE",
+  "tag": "DE - KKP / KubeOne",
+  "lede": "German Kubernetes-automation vendor from data center to edge.",
+  "facts": [
+    "KKP and KubeOne operate thousands of clusters consistently.",
+    "Spans bare metal, core data center and edge without oversized ops teams.",
+    "Positions Kubernetes as a sovereign operational substrate for apps and AI."
+  ],
+  "link": "https://www.kubermatic.com"
+}

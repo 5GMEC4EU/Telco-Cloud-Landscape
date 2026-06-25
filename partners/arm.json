@@ -1,0 +1,14 @@
+{
+  "slug": "arm",
+  "name": "Arm",
+  "cluster": "hardware",
+  "layer": 4,
+  "country": "UK",
+  "tag": "UK - Architecture",
+  "lede": "Processor architecture powering most edge and device silicon.",
+  "facts": [
+    "Energy-efficient compute from gateways down to far-edge sensors.",
+    "Licensed broadly across edge SoC and appliance makers."
+  ],
+  "link": "https://www.arm.com"
+}

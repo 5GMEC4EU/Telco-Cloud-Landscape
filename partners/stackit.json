@@ -1,0 +1,15 @@
+{
+  "slug": "stackit",
+  "name": "STACKIT",
+  "cluster": "infra",
+  "layer": 1,
+  "country": "DE",
+  "tag": "DE - Schwarz Group",
+  "lede": "Sovereign cloud of the Schwarz Group (Lidl/Kaufland), focused on industry and retail.",
+  "facts": [
+    "Reached SEAL-3 in the EU Cloud Sovereignty Framework.",
+    "Customer base weighted toward large industrial and retail buyers.",
+    "Part of the EUR 180M EU framework deal (April 2026) with Scaleway, Post Telecom and Proximus."
+  ],
+  "link": "https://www.stackit.de"
+}

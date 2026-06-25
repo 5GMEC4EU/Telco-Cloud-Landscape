@@ -1,0 +1,14 @@
+{
+  "slug": "kubernetes",
+  "name": "Kubernetes (CNCF)",
+  "cluster": "platform",
+  "layer": 1,
+  "country": "INT",
+  "tag": "CNCF - foundation",
+  "lede": "The de-facto container orchestration foundation of the cloud-edge continuum.",
+  "facts": [
+    "Edge variants (K3s, KubeEdge, OpenYurt) adapt it for constrained, distributed sites.",
+    "Increasingly the common substrate for apps, AI and virtualised infrastructure - in the cloud and at the edge."
+  ],
+  "link": "https://kubernetes.io"
+}

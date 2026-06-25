@@ -1,0 +1,15 @@
+{
+  "slug": "starlingx",
+  "name": "StarlingX",
+  "cluster": "platform",
+  "layer": 2,
+  "country": "INT",
+  "tag": "OpenInfra",
+  "lede": "Complete cloud-infrastructure stack for the edge.",
+  "facts": [
+    "Bare-metal, VM and container workloads in one distributed edge platform.",
+    "Built for telecom, industrial IoT and ultra-low-latency use cases.",
+    "Governed by the OpenInfra Foundation."
+  ],
+  "link": "https://www.starlingx.io"
+}

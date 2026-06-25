@@ -1,0 +1,14 @@
+{
+  "slug": "advantech",
+  "name": "Advantech",
+  "cluster": "hardware",
+  "layer": 4,
+  "country": "TW",
+  "tag": "Industrial edge",
+  "lede": "Industrial and edge computing hardware for IoT and the far edge.",
+  "facts": [
+    "Ruggedised edge servers, gateways and IoT controllers.",
+    "Widely deployed in manufacturing, transport and energy verticals."
+  ],
+  "link": "https://www.advantech.com"
+}

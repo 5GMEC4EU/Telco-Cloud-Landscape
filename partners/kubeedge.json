@@ -1,0 +1,15 @@
+{
+  "slug": "kubeedge",
+  "name": "KubeEdge",
+  "cluster": "platform",
+  "layer": 3,
+  "country": "INT",
+  "tag": "CNCF",
+  "lede": "CNCF project extending Kubernetes natively to the edge.",
+  "facts": [
+    "Keeps the control plane in the cloud while edge nodes run autonomously offline.",
+    "Synchronises networking, app deployment and metadata across cloud and edge.",
+    "Widely used for telco and industrial edge."
+  ],
+  "link": "https://kubeedge.io"
+}

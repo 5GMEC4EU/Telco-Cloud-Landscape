@@ -1,0 +1,15 @@
+{
+  "slug": "vodafone",
+  "name": "Vodafone",
+  "cluster": "telco",
+  "layer": 3,
+  "country": "UK",
+  "tag": "UK - Federation",
+  "lede": "UK-based, pan-European operator in the federated edge alliance.",
+  "facts": [
+    "Among the five operators that federated their edge environments across Europe for the first time.",
+    "Enables application deployment through a single entry point across its European footprint.",
+    "Headquartered in Newbury, UK, with major European operations (Germany and others)."
+  ],
+  "link": "https://www.vodafone.com"
+}

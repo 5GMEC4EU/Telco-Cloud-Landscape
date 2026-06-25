@@ -1,0 +1,15 @@
+{
+  "slug": "project-eve",
+  "name": "Project EVE",
+  "cluster": "platform",
+  "layer": 4,
+  "country": "INT",
+  "tag": "LF Edge - Edge OS",
+  "lede": "Open Linux-based operating system (EVE-OS) for distributed edge computing.",
+  "facts": [
+    "Reached LF Edge Impact stage in 2025 with new multi-node support.",
+    "Aims to be a common platform for the edge, much like Android was for mobile.",
+    "Runs containers, VMs and clusters on diverse far-edge hardware."
+  ],
+  "link": "https://www.lfedge.org/projects/eve/"
+}

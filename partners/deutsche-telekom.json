@@ -1,0 +1,15 @@
+{
+  "slug": "deutsche-telekom",
+  "name": "Deutsche Telekom",
+  "cluster": "telco",
+  "layer": 3,
+  "country": "DE",
+  "tag": "DE - Co-initiator",
+  "lede": "Driving force behind the European Edge Continuum and an IPCEI-CIS lead project.",
+  "facts": [
+    "Co-initiator of the first federated European edge cloud, shown live at MWC 2026 with Orange, Telefonica, TIM and Vodafone.",
+    "Leads a direct IPCEI-CIS project and is engaged in the planned IPCEI-AI.",
+    "Runs the Open Telekom Cloud via T-Systems and targets a central role in Europe's industrial AI cloud."
+  ],
+  "link": "https://www.telekom.com"
+}

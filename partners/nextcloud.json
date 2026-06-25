@@ -1,0 +1,14 @@
+{
+  "slug": "nextcloud",
+  "name": "Nextcloud",
+  "cluster": "orch",
+  "layer": 4,
+  "country": "DE",
+  "tag": "DE - Collaboration",
+  "lede": "German open-source platform for sovereign collaboration and file storage.",
+  "facts": [
+    "A sovereign alternative to US SaaS for files, communication and office.",
+    "Runs on-premises or at EU providers - data stays under your own control."
+  ],
+  "link": "https://nextcloud.com"
+}

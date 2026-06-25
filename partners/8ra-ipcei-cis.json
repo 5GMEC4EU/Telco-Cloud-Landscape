@@ -1,0 +1,16 @@
+{
+  "slug": "8ra-ipcei-cis",
+  "name": "8ra / IPCEI-CIS",
+  "cluster": "std",
+  "layer": 2,
+  "country": "EU",
+  "tag": "EU - 12 states",
+  "lede": "The EU funding project for a multi-provider cloud-edge continuum - the federating backbone.",
+  "facts": [
+    "12 member states, ~120-150 industry and research partners, 19 direct projects.",
+    "EUR 1.2B of public funding, approved by the European Commission in late 2023.",
+    "The Lab8ra testbed links 14 organisations across five countries.",
+    "Contributes to the EU goal of 10,000 edge nodes by 2030 - provider-independent and federated."
+  ],
+  "link": "https://www.8ra.com"
+}

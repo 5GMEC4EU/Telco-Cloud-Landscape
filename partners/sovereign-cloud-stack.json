@@ -1,0 +1,15 @@
+{
+  "slug": "sovereign-cloud-stack",
+  "name": "Sovereign Cloud Stack (SCS)",
+  "cluster": "orch",
+  "layer": 1,
+  "country": "DE",
+  "tag": "DE - Open source",
+  "lede": "Standardised open-source stack for sovereign clouds, funded by the German government.",
+  "facts": [
+    "Built on OpenStack and Kubernetes, with no proprietary dependencies.",
+    "Targeted at public administration and critical infrastructure.",
+    "GitOps-friendly and fully declarative as a basis for provider-independent clouds."
+  ],
+  "link": "https://scs.community"
+}

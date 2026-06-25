@@ -1,0 +1,14 @@
+{
+  "slug": "orange",
+  "name": "Orange",
+  "cluster": "telco",
+  "layer": 3,
+  "country": "FR",
+  "tag": "FR - Federation",
+  "lede": "French operator in the federated European edge alliance.",
+  "facts": [
+    "One of the five operators in the federated European Edge Continuum demo.",
+    "Runs its own direct project inside IPCEI-CIS / the 8ra initiative."
+  ],
+  "link": "https://www.orange.com"
+}

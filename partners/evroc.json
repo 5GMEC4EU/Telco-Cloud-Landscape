@@ -1,0 +1,15 @@
+{
+  "slug": "evroc",
+  "name": "evroc",
+  "cluster": "infra",
+  "layer": 1,
+  "country": "SE",
+  "tag": "SE - Hyperscale-sovereign",
+  "lede": "Swedish newcomer building what it calls Europe's first hyperscale sovereign cloud.",
+  "facts": [
+    "Positions itself as a hyperscale sovereign cloud with a fully European operational footprint.",
+    "Partners with SUSE for a fully sovereign Linux and Kubernetes stack (Sovereign Rancher).",
+    "Control-plane and metadata stay within EU jurisdiction."
+  ],
+  "link": "https://evroc.com"
+}

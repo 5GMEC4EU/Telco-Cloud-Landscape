@@ -1,0 +1,15 @@
+{
+  "slug": "telefonica",
+  "name": "Telefonica",
+  "cluster": "telco",
+  "layer": 3,
+  "country": "ES",
+  "tag": "ES - Edge rollout",
+  "lede": "Spanish operator with an active edge rollout and an IPCEI lead project.",
+  "facts": [
+    "Partner in the federated European edge cloud.",
+    "Has begun deploying edge nodes across Spain.",
+    "Leads a direct IPCEI-CIS project within 8ra."
+  ],
+  "link": "https://www.telefonica.com"
+}

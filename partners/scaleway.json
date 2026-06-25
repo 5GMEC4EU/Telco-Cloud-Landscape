@@ -1,0 +1,15 @@
+{
+  "slug": "scaleway",
+  "name": "Scaleway",
+  "cluster": "infra",
+  "layer": 1,
+  "country": "FR",
+  "tag": "FR - iliad",
+  "lede": "Developer- and AI-focused sovereign cloud provider from France.",
+  "facts": [
+    "Bare metal, GPU instances and OpenAI-compatible inference APIs.",
+    "Reached SEAL-3 and won a standalone Cloud III slot.",
+    "Member of the 2026 EUR 180M EU framework deal."
+  ],
+  "link": "https://www.scaleway.com"
+}

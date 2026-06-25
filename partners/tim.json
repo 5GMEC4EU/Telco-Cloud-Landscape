@@ -1,0 +1,14 @@
+{
+  "slug": "tim",
+  "name": "TIM (Telecom Italia)",
+  "cluster": "telco",
+  "layer": 3,
+  "country": "IT",
+  "tag": "IT - Federation",
+  "lede": "Italian operator in the European edge federation.",
+  "facts": [
+    "One of the five federated network operators.",
+    "Leads a direct IPCEI-CIS project."
+  ],
+  "link": "https://www.gruppotim.it"
+}

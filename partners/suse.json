@@ -1,0 +1,16 @@
+{
+  "slug": "suse",
+  "name": "SUSE",
+  "cluster": "orch",
+  "layer": 2,
+  "country": "LU",
+  "tag": "LU/DE - Rancher / RKE2",
+  "lede": "European open-source vendor for sovereign Kubernetes management.",
+  "facts": [
+    "Rancher Prime and the hardened RKE2 distribution manage clusters with European governance.",
+    "Building a European Sovereign Stack of Linux and Kubernetes together with evroc.",
+    "Stewards the lightweight K3s distribution for the edge.",
+    "Domiciled in Luxembourg (SUSE S.A.) with roots and core engineering in Nuremberg, Germany; owned by Sweden's EQT."
+  ],
+  "link": "https://www.suse.com"
+}

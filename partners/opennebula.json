@@ -1,0 +1,16 @@
+{
+  "slug": "opennebula",
+  "name": "OpenNebula",
+  "cluster": "orch",
+  "layer": 3,
+  "country": "ES",
+  "tag": "ES - Telco edge cloud",
+  "lede": "Open-source platform for carrier-grade telco edge clouds, unifying VNFs, CNFs and AI workloads from core to edge.",
+  "facts": [
+    "Manages virtualized and containerized network functions plus AI workloads with multi-tenancy and no vendor lock-in.",
+    "Official Sylva Validation Platform - the Linux Foundation Europe telco-cloud standard backed by Orange, Deutsche Telekom, Telefonica, Vodafone and TIM.",
+    "Built for 5G neutral host, vRAN / AI-RAN, distributed NFV and 6G pilots, and for sovereign multi-tenant 'Telco AI Factories'.",
+    "From OpenNebula Systems (Spain); contributor to European IPCEI-CIS edge projects."
+  ],
+  "link": "https://opennebula.io/ai-ready-telco-edge-cloud/"
+}

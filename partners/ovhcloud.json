@@ -1,0 +1,15 @@
+{
+  "slug": "ovhcloud",
+  "name": "OVHcloud",
+  "cluster": "infra",
+  "layer": 1,
+  "country": "FR",
+  "tag": "FR - SEAL-3",
+  "lede": "Broadest European sovereignty cloud with deep certification.",
+  "facts": [
+    "Around 43 data centres across nine countries.",
+    "SecNumCloud qualification and SEAL-3, the top tier of the EU Cloud Sovereignty Framework.",
+    "Involved in the ECB digital-euro framework and runs a dedicated defence unit."
+  ],
+  "link": "https://www.ovhcloud.com"
+}

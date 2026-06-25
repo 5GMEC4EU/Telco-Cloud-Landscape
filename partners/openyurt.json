@@ -1,0 +1,15 @@
+{
+  "slug": "openyurt",
+  "name": "OpenYurt",
+  "cluster": "platform",
+  "layer": 2,
+  "country": "INT",
+  "tag": "CNCF",
+  "lede": "Extends Kubernetes to the edge without changing its APIs.",
+  "facts": [
+    "Originated at Alibaba; a CNCF project for large edge-node fleets.",
+    "YurtHub caches the K8s API locally for disconnected nodes; YurtTunnel handles NAT/firewalled sites.",
+    "Integrates with EdgeX Foundry for device management."
+  ],
+  "link": "https://openyurt.io"
+}

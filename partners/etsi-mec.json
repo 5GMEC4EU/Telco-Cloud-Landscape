@@ -1,0 +1,15 @@
+{
+  "slug": "etsi-mec",
+  "name": "ETSI MEC",
+  "cluster": "std",
+  "layer": 3,
+  "country": "EU",
+  "tag": "MEC standard",
+  "lede": "The standards body that defines Multi-access Edge Computing.",
+  "facts": [
+    "ETSI's MEC ISG specifies the MEC reference architecture and service APIs.",
+    "Makes operator-edge applications portable and interoperable across networks.",
+    "The technical backbone of the 5G + MEC ecosystem."
+  ],
+  "link": "https://www.etsi.org/technologies/multi-access-edge-computing"
+}

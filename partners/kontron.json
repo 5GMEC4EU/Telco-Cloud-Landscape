@@ -1,0 +1,15 @@
+{
+  "slug": "kontron",
+  "name": "Kontron",
+  "cluster": "hardware",
+  "layer": 3,
+  "country": "AT",
+  "tag": "AT - Edge servers",
+  "lede": "European maker of edge servers and carrier-grade MEC appliances.",
+  "facts": [
+    "Embedded and network-edge hardware for telecom and industrial sites.",
+    "Supplies ruggedised compute for far-edge and on-prem deployments.",
+    "Headquartered in Linz, Austria (the former S&T AG), with significant embedded-computing operations in Germany."
+  ],
+  "link": "https://www.kontron.com"
+}

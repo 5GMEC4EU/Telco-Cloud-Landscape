@@ -1,0 +1,14 @@
+{
+  "slug": "gaia-x",
+  "name": "Gaia-X",
+  "cluster": "std",
+  "layer": 1,
+  "country": "EU",
+  "tag": "EU - Framework",
+  "lede": "European framework for federated, sovereign cloud and data infrastructure.",
+  "facts": [
+    "Standards for interoperability, portability and compliance.",
+    "A reference framework that sovereign providers align to."
+  ],
+  "link": "https://gaia-x.eu"
+}

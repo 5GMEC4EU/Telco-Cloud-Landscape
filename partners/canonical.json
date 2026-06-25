@@ -1,0 +1,14 @@
+{
+  "slug": "canonical",
+  "name": "Canonical (Ubuntu)",
+  "cluster": "orch",
+  "layer": 2,
+  "country": "UK",
+  "tag": "UK - Ubuntu / OpenStack",
+  "lede": "Maker of Ubuntu with open building blocks for private and edge clouds.",
+  "facts": [
+    "MicroK8s and Sunbeam / Charmed OpenStack as the base for sovereign self-operated clouds.",
+    "UK-based - European, but outside the EU."
+  ],
+  "link": "https://canonical.com"
+}

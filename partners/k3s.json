@@ -1,0 +1,14 @@
+{
+  "slug": "k3s",
+  "name": "K3s",
+  "cluster": "platform",
+  "layer": 3,
+  "country": "INT",
+  "tag": "CNCF - lightweight K8s",
+  "lede": "Lightweight, CNCF-certified Kubernetes distribution for the edge.",
+  "facts": [
+    "Single small binary with a minimal footprint, originated at Rancher / SUSE.",
+    "Ideal for edge gateways, constrained sites and far-edge clusters."
+  ],
+  "link": "https://k3s.io"
+}

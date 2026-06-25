@@ -1,0 +1,15 @@
+{
+  "slug": "lf-edge",
+  "name": "LF Edge",
+  "cluster": "platform",
+  "layer": 3,
+  "country": "INT",
+  "tag": "Linux Foundation",
+  "lede": "Linux Foundation umbrella for open, interoperable edge - independent of hardware, cloud or OS.",
+  "facts": [
+    "Hosts ~16 projects across telecom, IoT, industrial and transportation edge.",
+    "Portfolio includes EdgeX Foundry, EVE, Akraino, Fledge and Open Horizon.",
+    "Provides blueprints and a shared taxonomy for the open edge stack."
+  ],
+  "link": "https://lfedge.org"
+}
