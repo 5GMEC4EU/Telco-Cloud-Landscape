@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edge & MEC Ecosystem Map — Europe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F9FB;--surface:#FFFFFF;--surface-2:#EAF2F5;
+    --txt:#0E2A33;--txt-dim:#557080;--txt-faint:#8AA0AA;
+    --line:#DCE7EB;--brand:#1BB0CE;--brand-deep:#0E6F86;
+    --shadow:rgba(14,42,51,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:
+      radial-gradient(1100px 520px at 88% -8%, rgba(27,176,206,.10), transparent 60%),
+      var(--bg);
+    color:var(--txt);font-family:"Inter",system-ui,sans-serif;line-height:1.5;
+    -webkit-font-smoothing:antialiased;min-height:100vh;
+  }
+  .wrap{max-width:1320px;margin:0 auto;padding:clamp(14px,2.5vw,28px)}
+
+  /* ---------- TOOLBAR ---------- */
+  .bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .brand{display:flex;flex-direction:column;gap:3px;margin-right:auto}
+  .brand .kick{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-deep)}
+  .brand h1{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(16px,2.4vw,22px);letter-spacing:-.01em;color:var(--txt)}
+  .brand h1 b{color:var(--brand);font-weight:700}
+
+  .filters{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{
+    font-size:12.5px;font-weight:500;color:var(--txt-dim);background:var(--surface);
+    border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;
+    display:flex;align-items:center;gap:7px;transition:color .18s,border-color .18s,background .18s;
+  }
+  .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--cdot,var(--txt-faint));transition:transform .18s}
+  .chip:hover{color:var(--txt);border-color:var(--txt-faint)}
+  .chip[aria-pressed="true"]{color:#fff;background:var(--brand);border-color:var(--brand);font-weight:600}
+  .chip[aria-pressed="true"] .dot{background:#fff;transform:scale(1.2)}
+  .chip:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+  .tools{display:flex;align-items:center;gap:10px}
+  .search{position:relative;display:flex;align-items:center}
+  .search svg{position:absolute;left:11px;width:14px;height:14px;stroke:var(--txt-faint);pointer-events:none}
+  .search input{
+    font-family:"Inter",sans-serif;font-size:13px;color:var(--txt);background:var(--surface);
+    border:1px solid var(--line);border-radius:999px;padding:8px 13px 8px 32px;width:170px;max-width:46vw;transition:border-color .18s,width .18s;
+  }
+  .search input::placeholder{color:var(--txt-faint)}
+  .search input:focus{outline:none;border-color:var(--brand);width:200px}
+  .gh{
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.03em;color:#fff;background:var(--brand-deep);
+    text-decoration:none;border:1px solid var(--brand-deep);border-radius:999px;padding:8px 13px;white-space:nowrap;transition:background .18s}
+  .gh:hover{background:var(--brand)}
+  .gh:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+  .subbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-top:12px;
+    font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.03em;color:var(--txt-faint)}
+  .subbar b{color:var(--brand-deep);font-weight:500}
+  .ctx{color:var(--brand-deep);text-decoration:none;border-bottom:1px solid rgba(14,111,134,.35)}
+  .ctx:hover{border-color:var(--brand-deep)}
+
+  /* ---------- CONTINUUM ---------- */
+  .spine{margin-top:16px;height:4px;border-radius:4px;position:relative;overflow:hidden;
+    background:linear-gradient(90deg,var(--brand-deep) 0%,var(--brand) 55%,#7FD7E6 100%)}
+  .spine::after{content:"";position:absolute;top:0;left:-30%;width:30%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);animation:flow 4.4s linear infinite}
+  @keyframes flow{to{left:130%}}
+
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:6px}
+  .col-head{padding:14px 2px 6px}
+  .col-head .n{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--brand);letter-spacing:.1em;font-weight:700}
+  .col-title{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-top:4px}
+  .col-head h3{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px;color:var(--txt);line-height:1.2}
+  .col-head p{font-size:11.5px;color:var(--txt-dim);margin-top:3px;line-height:1.35}
+  .info{flex:none;width:20px;height:20px;border-radius:50%;border:1px solid var(--line);background:var(--surface);
+    color:var(--txt-faint);font-size:11px;font-weight:700;cursor:pointer;line-height:1;font-family:"JetBrains Mono",monospace;
+    display:flex;align-items:center;justify-content:center;transition:.16s}
+  .info:hover{color:var(--brand);border-color:var(--brand)}
+  .info:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .col-explain{font-size:12px;color:var(--txt-dim);line-height:1.5;max-height:0;overflow:hidden;opacity:0;
+    transition:max-height .26s ease,opacity .2s,margin-top .2s;border-left:2px solid var(--brand);padding-left:0}
+  .col-explain.open{max-height:300px;opacity:1;margin-top:10px;padding-left:10px}
+  .col-body{display:flex;flex-direction:column;gap:9px;min-height:30px;margin-top:10px}
+  .empty{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--txt-faint);padding:6px 2px;opacity:.6}
+
+  /* ---------- CARD ---------- */
+  .card{position:relative;text-align:left;width:100%;cursor:pointer;background:var(--surface);
+    border:1px solid var(--line);border-left:3px solid var(--cdot,var(--line));border-radius:10px;padding:11px 12px;
+    transition:transform .16s,box-shadow .16s,border-color .16s,opacity .2s;display:flex;flex-direction:column;gap:5px}
+  .card:hover{transform:translateY(-2px);box-shadow:0 8px 22px var(--shadow);border-color:var(--cdot)}
+  .card:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .card .name{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:13.5px;color:var(--txt);line-height:1.2;overflow-wrap:anywhere}
+  .card .tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.02em;color:var(--cdot);text-transform:uppercase;filter:brightness(.9);overflow-wrap:anywhere}
+  body.filtering .card{opacity:.22;filter:grayscale(.55)}
+  body.filtering .card.match{opacity:1;filter:none}
+  .card.gone{display:none}
+  .card .tip{position:absolute;left:12px;right:12px;bottom:calc(100% + 8px);background:var(--txt);border-radius:8px;
+    padding:9px 11px;font-size:12px;color:#EAF6F9;line-height:1.4;box-shadow:0 12px 30px rgba(14,42,51,.28);
+    opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s,transform .16s,visibility .16s;z-index:5;pointer-events:none}
+  .card:hover .tip,.card:focus-visible .tip{opacity:1;visibility:visible;transform:translateY(0)}
+
+  /* ---------- DETAIL PANEL ---------- */
+  .scrim{position:fixed;inset:0;background:rgba(14,42,51,.35);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:.22s;z-index:40}
+  .scrim.open{opacity:1;visibility:visible}
+  .panel{position:fixed;top:0;right:0;height:100%;width:min(440px,92vw);background:var(--surface);border-left:1px solid var(--line);
+    box-shadow:-18px 0 50px rgba(14,42,51,.16);transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.2,1);
+    z-index:41;display:flex;flex-direction:column;overflow-y:auto}
+  .panel.open{transform:translateX(0)}
+  .panel-top{padding:24px 24px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:2}
+  .panel-close{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:8px;background:var(--surface);border:1px solid var(--line);
+    color:var(--txt-dim);cursor:pointer;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;transition:.16s}
+  .panel-close:hover{color:var(--txt);border-color:var(--txt-faint)}
+  .panel-close:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .p-cluster{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:7px;color:var(--txt-dim)}
+  .p-cluster .dot{width:9px;height:9px;border-radius:50%}
+  .p-name{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:25px;margin-top:12px;letter-spacing:-.01em}
+  .p-tag{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--txt-dim);margin-top:8px}
+  .panel-body{padding:22px 24px 30px;display:flex;flex-direction:column;gap:22px}
+  .p-lede{font-size:15px;color:var(--txt);line-height:1.55}
+  .p-section h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:10px}
+  .p-pos{display:flex;gap:7px}
+  .p-pos .seg{flex:1;height:6px;border-radius:3px;background:var(--surface-2)}
+  .p-pos .seg.on{background:var(--brand)}
+  .p-pos-label{font-size:12.5px;color:var(--txt-dim);margin-top:9px}
+  .p-facts{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .p-facts li{position:relative;padding-left:18px;font-size:13.5px;color:var(--txt-dim);line-height:1.5}
+  .p-facts li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--brand)}
+  .p-link{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--brand-deep);text-decoration:none;border-bottom:1px solid rgba(14,111,134,.35);align-self:flex-start}
+  .p-link:hover{border-color:var(--brand-deep)}
+
+  /* ---------- FOOTER ---------- */
+  footer{margin-top:38px;padding-top:18px;border-top:1px solid var(--line);font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--txt-faint);line-height:1.7;letter-spacing:.02em}
+  footer .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:12px}
+  footer .lg{display:flex;align-items:center;gap:7px;color:var(--txt-dim)}
+  footer .lg .dot{width:8px;height:8px;border-radius:50%}
+  footer a{color:var(--brand-deep);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  @media (max-width:860px){
+    .brand{margin-right:0;width:100%}
+    .grid{grid-template-columns:1fr;gap:6px}
+    .col-head{padding:16px 2px 6px;border-top:1px solid var(--line)}
+    .col-head:first-child{border-top:none}
+    .col-body{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px}
+    .card .tip{display:none}
+    .tools{width:100%}.search{flex:1}.search input{width:100%;max-width:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="bar">
+    <div class="brand">
+      <span class="kick">Edge-Cloud Continuum · Europe</span>
+      <h1>Edge &amp; <b>MEC</b> — Ecosystem Map</h1>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by role"></div>
+    <div class="tools">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="search" type="search" placeholder="Search…" aria-label="Search players">
+      </div>
+      <a class="gh" id="gh" href="#" target="_blank" rel="noopener">+ Add yours ↗</a>
+    </div>
+  </div>
+
+  <div class="subbar">
+    <span><b id="count">0</b> of <span id="total">0</span> players · the European edge &amp; MEC continuum, cloud to device</span>
+    <a class="ctx" href="https://digital-strategy.ec.europa.eu/en/library/communication-european-tech-sovereignty-accompanied-eu-open-source-strategy" target="_blank" rel="noopener">In the context of the European Tech Sovereignty stack ↗</a>
+  </div>
+
+  <div class="spine" aria-hidden="true"></div>
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <div class="legend" id="legend"></div>
+    As of June 2026 · Sources incl. 5GMEC4EU, ETSI MEC, LF Edge, 8ra / IPCEI-CIS, SUSE, STL Partners. ·
+    Entries are maintained by partners via the <a id="gh2" href="#" target="_blank" rel="noopener">GitHub repo</a>. Continuum position is a simplified centre of gravity.
+  </footer>
+</div>
+
+<div class="scrim" id="scrim" tabindex="-1"></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="p-name" aria-hidden="true">
+  <div class="panel-top">
+    <button class="panel-close" id="close" aria-label="Close">✕</button>
+    <div class="p-cluster" id="p-cluster"><span class="dot"></span><span class="lbl"></span></div>
+    <div class="p-name" id="p-name"></div>
+    <div class="p-tag" id="p-tag"></div>
+  </div>
+  <div class="panel-body">
+    <p class="p-lede" id="p-lede"></p>
+    <div class="p-section"><h4>Position in the continuum</h4><div class="p-pos" id="p-pos"></div><div class="p-pos-label" id="p-pos-label"></div></div>
+    <div class="p-section"><h4>At a glance</h4><ul class="p-facts" id="p-facts"></ul></div>
+    <a class="p-link" id="p-link" href="#" target="_blank" rel="noopener">Website ↗</a>
+  </div>
+</aside>
+
+<script>
+// Replace with your repository URL after pushing:
+const REPO_URL = "https://https://github.com/5GMEC4EU/Telco-Cloud-Landscape";
+// Embedded fallback so the page renders offline / before the build runs.
+const BOOTSTRAP = /*__BOOTSTRAP__*/null;
+
+const POS_LABEL = ["Regional / Sovereign Cloud","Edge Cloud (Aggregation)","Access / Network Edge (MEC)","Device / Far Edge"];
+let CLUSTERS={}, LAYERS=[], PLAYERS=[];
+
+document.getElementById('gh').href = REPO_URL + "/blob/main/CONTRIBUTING.md";
+document.getElementById('gh2').href = REPO_URL;
+
+boot();
+async function boot(){
+  CLUSTERS = BOOTSTRAP.clusters; LAYERS = BOOTSTRAP.layers;
+  let players = BOOTSTRAP.players;
+  try{
+    const r = await fetch('data/players.json',{cache:'no-store'});
+    if(r.ok){ const j = await r.json(); if(Array.isArray(j)&&j.length) players = j; }
+  }catch(e){ /* offline -> keep fallback */ }
+  PLAYERS = players;
+  render();
+}
+
+function render(){
+  const filters=document.getElementById('filters');filters.innerHTML='';
+  filters.appendChild(chip('all','All','var(--brand)',true));
+  Object.entries(CLUSTERS).forEach(([k,c])=>filters.appendChild(chip(k,c.label,c.color,false)));
+
+  const grid=document.getElementById('grid');grid.innerHTML='';const cols=[];
+  LAYERS.forEach((L,i)=>{
+    const wrap=document.createElement('div');
+    wrap.innerHTML=
+      `<div class="col-head"><div class="n">${L.n}</div>
+        <div class="col-title"><h3>${L.title}</h3>
+          <button class="info" aria-expanded="false" aria-label="Explain this tier">i</button></div>
+        <p>${L.sub}</p><div class="col-explain">${L.explain}</div></div>`;
+    const body=document.createElement('div');body.className='col-body';
+    wrap.querySelector('.col-head').appendChild(body);
+    const btn=wrap.querySelector('.info'),exp=wrap.querySelector('.col-explain');
+    btn.addEventListener('click',()=>{const o=exp.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+    grid.appendChild(wrap);cols[i+1]=body;
+  });
+
+  PLAYERS.forEach((p,idx)=>{
+    const c=CLUSTERS[p.cluster];if(!c||!cols[p.layer])return;
+    const b=document.createElement('button');
+    b.className='card';b.dataset.cluster=p.cluster;b.dataset.idx=idx;b.style.setProperty('--cdot',c.color);
+    b.setAttribute('aria-haspopup','dialog');
+    b.innerHTML=`<span class="name">${esc(p.name)}</span><span class="tag">${esc(p.tag||'')}</span><span class="tip">${esc(p.lede||'')}</span>`;
+    b.addEventListener('click',()=>openPanel(idx));
+    cols[p.layer].appendChild(b);
+  });
+
+  const legend=document.getElementById('legend');legend.innerHTML='';
+  Object.values(CLUSTERS).forEach(c=>{
+    const el=document.createElement('span');el.className='lg';
+    el.innerHTML=`<span class="dot" style="background:${c.color}"></span>${c.label}`;legend.appendChild(el);
+  });
+
+  document.getElementById('total').textContent=PLAYERS.length;
+  document.getElementById('count').textContent=PLAYERS.length;
+  wireFilters();apply();
+}
+
+function chip(key,label,color,pressed){
+  const b=document.createElement('button');b.className='chip';b.dataset.cluster=key;b.setAttribute('aria-pressed',pressed);
+  b.innerHTML=`<span class="dot" style="--cdot:${color}"></span>${label}`;return b;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+
+let active='all';const search=document.getElementById('search');
+function wireFilters(){
+  document.getElementById('filters').addEventListener('click',e=>{
+    const b=e.target.closest('.chip');if(!b)return;active=b.dataset.cluster;
+    document.querySelectorAll('#filters .chip').forEach(c=>c.setAttribute('aria-pressed',c===b));apply();
+  });
+}
+search.addEventListener('input',apply);
+function apply(){
+  const q=search.value.trim().toLowerCase();let shown=0;
+  document.querySelectorAll('.card').forEach(card=>{
+    const p=PLAYERS[+card.dataset.idx];
+    const text=(p.name+' '+(p.tag||'')+' '+(p.lede||'')+' '+(p.facts||[]).join(' ')).toLowerCase();
+    const ok=(active==='all'||card.dataset.cluster===active)&&(!q||text.includes(q));
+    card.classList.toggle('gone',!ok);card.classList.toggle('match',ok);if(ok)shown++;
+  });
+  document.body.classList.toggle('filtering',active!=='all'||!!q);
+  document.getElementById('count').textContent=shown;
+  document.querySelectorAll('.col-body').forEach(col=>{
+    const any=[...col.children].some(ch=>ch.classList.contains('card')&&!ch.classList.contains('gone'));
+    let hint=col.querySelector('.empty');
+    if(!any){if(!hint){hint=document.createElement('div');hint.className='empty';hint.textContent='—';col.appendChild(hint);}}
+    else if(hint)hint.remove();
+  });
+}
+
+const panel=document.getElementById('panel'),scrim=document.getElementById('scrim');let lastFocus=null;
+function openPanel(idx){
+  const p=PLAYERS[idx],c=CLUSTERS[p.cluster];lastFocus=document.activeElement;
+  document.querySelector('#p-cluster .dot').style.background=c.color;
+  document.querySelector('#p-cluster .lbl').textContent=c.label;
+  document.getElementById('p-name').textContent=p.name;
+  document.getElementById('p-tag').textContent=p.tag||'';
+  document.getElementById('p-lede').textContent=p.lede||'';
+  const pos=document.getElementById('p-pos');pos.innerHTML='';
+  for(let i=1;i<=4;i++){const s=document.createElement('div');s.className='seg'+(i===p.layer?' on':'');pos.appendChild(s);}
+  document.getElementById('p-pos-label').textContent=POS_LABEL[p.layer-1];
+  const ul=document.getElementById('p-facts');ul.innerHTML='';
+  (p.facts||[]).forEach(f=>{const li=document.createElement('li');li.textContent=f;ul.appendChild(li);});
+  const link=document.getElementById('p-link');
+  if(p.link){link.style.display='';link.href=p.link;}else{link.style.display='none';}
+  panel.classList.add('open');scrim.classList.add('open');panel.setAttribute('aria-hidden','false');
+  document.getElementById('close').focus();
+}
+function closePanel(){panel.classList.remove('open');scrim.classList.remove('open');panel.setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus();}
+document.getElementById('close').addEventListener('click',closePanel);
+scrim.addEventListener('click',closePanel);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.classList.contains('open'))closePanel();});
+</script>
+</body>
+</html>

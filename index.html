@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edge & MEC Ecosystem Map — Europe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F9FB;--surface:#FFFFFF;--surface-2:#EAF2F5;
+    --txt:#0E2A33;--txt-dim:#557080;--txt-faint:#8AA0AA;
+    --line:#DCE7EB;--brand:#1BB0CE;--brand-deep:#0E6F86;
+    --shadow:rgba(14,42,51,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:
+      radial-gradient(1100px 520px at 88% -8%, rgba(27,176,206,.10), transparent 60%),
+      var(--bg);
+    color:var(--txt);font-family:"Inter",system-ui,sans-serif;line-height:1.5;
+    -webkit-font-smoothing:antialiased;min-height:100vh;
+  }
+  .wrap{max-width:1320px;margin:0 auto;padding:clamp(14px,2.5vw,28px)}
+
+  /* ---------- TOOLBAR ---------- */
+  .bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .brand{display:flex;flex-direction:column;gap:3px;margin-right:auto}
+  .brand .kick{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-deep)}
+  .brand h1{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(16px,2.4vw,22px);letter-spacing:-.01em;color:var(--txt)}
+  .brand h1 b{color:var(--brand);font-weight:700}
+
+  .filters{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{
+    font-size:12.5px;font-weight:500;color:var(--txt-dim);background:var(--surface);
+    border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;
+    display:flex;align-items:center;gap:7px;transition:color .18s,border-color .18s,background .18s;
+  }
+  .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--cdot,var(--txt-faint));transition:transform .18s}
+  .chip:hover{color:var(--txt);border-color:var(--txt-faint)}
+  .chip[aria-pressed="true"]{color:#fff;background:var(--brand);border-color:var(--brand);font-weight:600}
+  .chip[aria-pressed="true"] .dot{background:#fff;transform:scale(1.2)}
+  .chip:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+  .tools{display:flex;align-items:center;gap:10px}
+  .search{position:relative;display:flex;align-items:center}
+  .search svg{position:absolute;left:11px;width:14px;height:14px;stroke:var(--txt-faint);pointer-events:none}
+  .search input{
+    font-family:"Inter",sans-serif;font-size:13px;color:var(--txt);background:var(--surface);
+    border:1px solid var(--line);border-radius:999px;padding:8px 13px 8px 32px;width:170px;max-width:46vw;transition:border-color .18s,width .18s;
+  }
+  .search input::placeholder{color:var(--txt-faint)}
+  .search input:focus{outline:none;border-color:var(--brand);width:200px}
+  .gh{
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.03em;color:#fff;background:var(--brand-deep);
+    text-decoration:none;border:1px solid var(--brand-deep);border-radius:999px;padding:8px 13px;white-space:nowrap;transition:background .18s}
+  .gh:hover{background:var(--brand)}
+  .gh:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+  .subbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-top:12px;
+    font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.03em;color:var(--txt-faint)}
+  .subbar b{color:var(--brand-deep);font-weight:500}
+  .ctx{color:var(--brand-deep);text-decoration:none;border-bottom:1px solid rgba(14,111,134,.35)}
+  .ctx:hover{border-color:var(--brand-deep)}
+
+  /* ---------- CONTINUUM ---------- */
+  .spine{margin-top:16px;height:4px;border-radius:4px;position:relative;overflow:hidden;
+    background:linear-gradient(90deg,var(--brand-deep) 0%,var(--brand) 55%,#7FD7E6 100%)}
+  .spine::after{content:"";position:absolute;top:0;left:-30%;width:30%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);animation:flow 4.4s linear infinite}
+  @keyframes flow{to{left:130%}}
+
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:6px}
+  .col-head{padding:14px 2px 6px}
+  .col-head .n{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--brand);letter-spacing:.1em;font-weight:700}
+  .col-title{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-top:4px}
+  .col-head h3{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px;color:var(--txt);line-height:1.2}
+  .col-head p{font-size:11.5px;color:var(--txt-dim);margin-top:3px;line-height:1.35}
+  .info{flex:none;width:20px;height:20px;border-radius:50%;border:1px solid var(--line);background:var(--surface);
+    color:var(--txt-faint);font-size:11px;font-weight:700;cursor:pointer;line-height:1;font-family:"JetBrains Mono",monospace;
+    display:flex;align-items:center;justify-content:center;transition:.16s}
+  .info:hover{color:var(--brand);border-color:var(--brand)}
+  .info:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .col-explain{font-size:12px;color:var(--txt-dim);line-height:1.5;max-height:0;overflow:hidden;opacity:0;
+    transition:max-height .26s ease,opacity .2s,margin-top .2s;border-left:2px solid var(--brand);padding-left:0}
+  .col-explain.open{max-height:300px;opacity:1;margin-top:10px;padding-left:10px}
+  .col-body{display:flex;flex-direction:column;gap:9px;min-height:30px;margin-top:10px}
+  .empty{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--txt-faint);padding:6px 2px;opacity:.6}
+
+  /* ---------- CARD ---------- */
+  .card{position:relative;text-align:left;width:100%;cursor:pointer;background:var(--surface);
+    border:1px solid var(--line);border-left:3px solid var(--cdot,var(--line));border-radius:10px;padding:11px 12px;
+    transition:transform .16s,box-shadow .16s,border-color .16s,opacity .2s;display:flex;flex-direction:column;gap:5px}
+  .card:hover{transform:translateY(-2px);box-shadow:0 8px 22px var(--shadow);border-color:var(--cdot)}
+  .card:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .card .name{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:13.5px;color:var(--txt);line-height:1.2;overflow-wrap:anywhere}
+  .card .tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.02em;color:var(--cdot);text-transform:uppercase;filter:brightness(.9);overflow-wrap:anywhere}
+  body.filtering .card{opacity:.22;filter:grayscale(.55)}
+  body.filtering .card.match{opacity:1;filter:none}
+  .card.gone{display:none}
+  .card .tip{position:absolute;left:12px;right:12px;bottom:calc(100% + 8px);background:var(--txt);border-radius:8px;
+    padding:9px 11px;font-size:12px;color:#EAF6F9;line-height:1.4;box-shadow:0 12px 30px rgba(14,42,51,.28);
+    opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s,transform .16s,visibility .16s;z-index:5;pointer-events:none}
+  .card:hover .tip,.card:focus-visible .tip{opacity:1;visibility:visible;transform:translateY(0)}
+
+  /* ---------- DETAIL PANEL ---------- */
+  .scrim{position:fixed;inset:0;background:rgba(14,42,51,.35);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:.22s;z-index:40}
+  .scrim.open{opacity:1;visibility:visible}
+  .panel{position:fixed;top:0;right:0;height:100%;width:min(440px,92vw);background:var(--surface);border-left:1px solid var(--line);
+    box-shadow:-18px 0 50px rgba(14,42,51,.16);transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.2,1);
+    z-index:41;display:flex;flex-direction:column;overflow-y:auto}
+  .panel.open{transform:translateX(0)}
+  .panel-top{padding:24px 24px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:2}
+  .panel-close{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:8px;background:var(--surface);border:1px solid var(--line);
+    color:var(--txt-dim);cursor:pointer;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;transition:.16s}
+  .panel-close:hover{color:var(--txt);border-color:var(--txt-faint)}
+  .panel-close:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .p-cluster{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:7px;color:var(--txt-dim)}
+  .p-cluster .dot{width:9px;height:9px;border-radius:50%}
+  .p-name{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:25px;margin-top:12px;letter-spacing:-.01em}
+  .p-tag{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--txt-dim);margin-top:8px}
+  .panel-body{padding:22px 24px 30px;display:flex;flex-direction:column;gap:22px}
+  .p-lede{font-size:15px;color:var(--txt);line-height:1.55}
+  .p-section h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:10px}
+  .p-pos{display:flex;gap:7px}
+  .p-pos .seg{flex:1;height:6px;border-radius:3px;background:var(--surface-2)}
+  .p-pos .seg.on{background:var(--brand)}
+  .p-pos-label{font-size:12.5px;color:var(--txt-dim);margin-top:9px}
+  .p-facts{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .p-facts li{position:relative;padding-left:18px;font-size:13.5px;color:var(--txt-dim);line-height:1.5}
+  .p-facts li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--brand)}
+  .p-link{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--brand-deep);text-decoration:none;border-bottom:1px solid rgba(14,111,134,.35);align-self:flex-start}
+  .p-link:hover{border-color:var(--brand-deep)}
+
+  /* ---------- FOOTER ---------- */
+  footer{margin-top:38px;padding-top:18px;border-top:1px solid var(--line);font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--txt-faint);line-height:1.7;letter-spacing:.02em}
+  footer .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:12px}
+  footer .lg{display:flex;align-items:center;gap:7px;color:var(--txt-dim)}
+  footer .lg .dot{width:8px;height:8px;border-radius:50%}
+  footer a{color:var(--brand-deep);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  @media (max-width:860px){
+    .brand{margin-right:0;width:100%}
+    .grid{grid-template-columns:1fr;gap:6px}
+    .col-head{padding:16px 2px 6px;border-top:1px solid var(--line)}
+    .col-head:first-child{border-top:none}
+    .col-body{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px}
+    .card .tip{display:none}
+    .tools{width:100%}.search{flex:1}.search input{width:100%;max-width:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="bar">
+    <div class="brand">
+      <span class="kick">Edge-Cloud Continuum · Europe</span>
+      <h1>Edge &amp; <b>MEC</b> — Ecosystem Map</h1>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by role"></div>
+    <div class="tools">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="search" type="search" placeholder="Search…" aria-label="Search players">
+      </div>
+      <a class="gh" id="gh" href="#" target="_blank" rel="noopener">+ Add yours ↗</a>
+    </div>
+  </div>
+
+  <div class="subbar">
+    <span><b id="count">0</b> of <span id="total">0</span> players · the European edge &amp; MEC continuum, cloud to device</span>
+    <a class="ctx" href="https://digital-strategy.ec.europa.eu/en/library/communication-european-tech-sovereignty-accompanied-eu-open-source-strategy" target="_blank" rel="noopener">In the context of the European Tech Sovereignty stack ↗</a>
+  </div>
+
+  <div class="spine" aria-hidden="true"></div>
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <div class="legend" id="legend"></div>
+    As of June 2026 · Sources incl. 5GMEC4EU, ETSI MEC, LF Edge, 8ra / IPCEI-CIS, SUSE, STL Partners. ·
+    Entries are maintained by partners via the <a id="gh2" href="#" target="_blank" rel="noopener">GitHub repo</a>. Continuum position is a simplified centre of gravity.
+  </footer>
+</div>
+
+<div class="scrim" id="scrim" tabindex="-1"></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="p-name" aria-hidden="true">
+  <div class="panel-top">
+    <button class="panel-close" id="close" aria-label="Close">✕</button>
+    <div class="p-cluster" id="p-cluster"><span class="dot"></span><span class="lbl"></span></div>
+    <div class="p-name" id="p-name"></div>
+    <div class="p-tag" id="p-tag"></div>
+  </div>
+  <div class="panel-body">
+    <p class="p-lede" id="p-lede"></p>
+    <div class="p-section"><h4>Position in the continuum</h4><div class="p-pos" id="p-pos"></div><div class="p-pos-label" id="p-pos-label"></div></div>
+    <div class="p-section"><h4>At a glance</h4><ul class="p-facts" id="p-facts"></ul></div>
+    <a class="p-link" id="p-link" href="#" target="_blank" rel="noopener">Website ↗</a>
+  </div>
+</aside>
+
+<script>
+// Replace with your repository URL after pushing:
+const REPO_URL = "https://github.com/YOUR-ORG/euro-edge-continuum";
+// Embedded fallback so the page renders offline / before the build runs.
+const BOOTSTRAP = {"clusters":{"telco":{"label":"MEC & Telco Edge","color":"#1BB0CE"},"platform":{"label":"Edge Software Platforms","color":"#2F6BD6"},"orch":{"label":"Cloud-Native & Orchestration","color":"#7A5AF0"},"hardware":{"label":"Edge Hardware & Silicon","color":"#E08A1E"},"infra":{"label":"Cloud & Sovereign Infra","color":"#109E6F"},"std":{"label":"Standards & Initiatives","color":"#D6457F"}},"layers":[{"n":"01","title":"Regional / Sovereign Cloud","sub":"Aggregation DCs & EU cloud regions","explain":"The anchor where heavy workloads, model training and central orchestration live. At this tier sovereignty is defined by jurisdiction and certification rather than physical proximity."},{"n":"02","title":"Edge Cloud (Aggregation)","sub":"Federated regional / metro edge nodes","explain":"Regional and metro edge sites that pool compute closer to users. Workloads shift here for lower latency while staying centrally managed and federated across providers."},{"n":"03","title":"Access / Network Edge (MEC)","sub":"MEC in the operator network, at the RAN","explain":"Multi-access Edge Computing inside the operator network at the access/RAN. Single-digit-millisecond latency for CCAM, AR/VR and real-time control — the heart of the 5G + MEC story."},{"n":"04","title":"Device / Far Edge","sub":"Gateways, vehicles, machines, sensors","explain":"On-premises gateways, vehicles and sensors. Processing happens without constant connectivity — autonomy is local and data stays physically on site."}],"players":[{"slug":"deutsche-telekom","name":"Deutsche Telekom","cluster":"telco","layer":3,"country":"DE","tag":"DE - Co-initiator","lede":"Driving force behind the European Edge Continuum and an IPCEI-CIS lead project.","facts":["Co-initiator of the first federated European edge cloud, shown live at MWC 2026 with Orange, Telefonica, TIM and Vodafone.","Leads a direct IPCEI-CIS project and is engaged in the planned IPCEI-AI.","Runs the Open Telekom Cloud via T-Systems and targets a central role in Europe's industrial AI cloud."],"link":"https://www.telekom.com"},{"slug":"orange","name":"Orange","cluster":"telco","layer":3,"country":"FR","tag":"FR - Federation","lede":"French operator in the federated European edge alliance.","facts":["One of the five operators in the federated European Edge Continuum demo.","Runs its own direct project inside IPCEI-CIS / the 8ra initiative."],"link":"https://www.orange.com"},{"slug":"telefonica","name":"Telefonica","cluster":"telco","layer":3,"country":"ES","tag":"ES - Edge rollout","lede":"Spanish operator with an active edge rollout and an IPCEI lead project.","facts":["Partner in the federated European edge cloud.","Has begun deploying edge nodes across Spain.","Leads a direct IPCEI-CIS project within 8ra."],"link":"https://www.telefonica.com"},{"slug":"tim","name":"TIM (Telecom Italia)","cluster":"telco","layer":3,"country":"IT","tag":"IT - Federation","lede":"Italian operator in the European edge federation.","facts":["One of the five federated network operators.","Leads a direct IPCEI-CIS project."],"link":"https://www.gruppotim.it"},{"slug":"vodafone","name":"Vodafone","cluster":"telco","layer":3,"country":"UK","tag":"UK - Federation","lede":"UK-based, pan-European operator in the federated edge alliance.","facts":["Among the five operators that federated their edge environments across Europe for the first time.","Enables application deployment through a single entry point across its European footprint.","Headquartered in Newbury, UK, with major European operations (Germany and others)."],"link":"https://www.vodafone.com"},{"slug":"edgex-foundry","name":"EdgeX Foundry","cluster":"platform","layer":4,"country":"INT","tag":"LF Edge - IoT","lede":"Vendor-neutral microservices framework bridging OT devices to applications and cloud.","facts":["Hardware- and OS-agnostic; connects sensors speaking Modbus, BACnet, MQTT, BLE and more.","Loosely-coupled, plug-and-play services for ingestion, normalisation and export.","An LF Edge Impact-stage (most mature) project."],"link":"https://www.edgexfoundry.org"},{"slug":"k3s","name":"K3s","cluster":"platform","layer":3,"country":"INT","tag":"CNCF - lightweight K8s","lede":"Lightweight, CNCF-certified Kubernetes distribution for the edge.","facts":["Single small binary with a minimal footprint, originated at Rancher / SUSE.","Ideal for edge gateways, constrained sites and far-edge clusters."],"link":"https://k3s.io"},{"slug":"kubeedge","name":"KubeEdge","cluster":"platform","layer":3,"country":"INT","tag":"CNCF","lede":"CNCF project extending Kubernetes natively to the edge.","facts":["Keeps the control plane in the cloud while edge nodes run autonomously offline.","Synchronises networking, app deployment and metadata across cloud and edge.","Widely used for telco and industrial edge."],"link":"https://kubeedge.io"},{"slug":"kubernetes","name":"Kubernetes (CNCF)","cluster":"platform","layer":1,"country":"INT","tag":"CNCF - foundation","lede":"The de-facto container orchestration foundation of the cloud-edge continuum.","facts":["Edge variants (K3s, KubeEdge, OpenYurt) adapt it for constrained, distributed sites.","Increasingly the common substrate for apps, AI and virtualised infrastructure - in the cloud and at the edge."],"link":"https://kubernetes.io"},{"slug":"lf-edge","name":"LF Edge","cluster":"platform","layer":3,"country":"INT","tag":"Linux Foundation","lede":"Linux Foundation umbrella for open, interoperable edge - independent of hardware, cloud or OS.","facts":["Hosts ~16 projects across telecom, IoT, industrial and transportation edge.","Portfolio includes EdgeX Foundry, EVE, Akraino, Fledge and Open Horizon.","Provides blueprints and a shared taxonomy for the open edge stack."],"link":"https://lfedge.org"},{"slug":"openyurt","name":"OpenYurt","cluster":"platform","layer":2,"country":"INT","tag":"CNCF","lede":"Extends Kubernetes to the edge without changing its APIs.","facts":["Originated at Alibaba; a CNCF project for large edge-node fleets.","YurtHub caches the K8s API locally for disconnected nodes; YurtTunnel handles NAT/firewalled sites.","Integrates with EdgeX Foundry for device management."],"link":"https://openyurt.io"},{"slug":"project-eve","name":"Project EVE","cluster":"platform","layer":4,"country":"INT","tag":"LF Edge - Edge OS","lede":"Open Linux-based operating system (EVE-OS) for distributed edge computing.","facts":["Reached LF Edge Impact stage in 2025 with new multi-node support.","Aims to be a common platform for the edge, much like Android was for mobile.","Runs containers, VMs and clusters on diverse far-edge hardware."],"link":"https://www.lfedge.org/projects/eve/"},{"slug":"starlingx","name":"StarlingX","cluster":"platform","layer":2,"country":"INT","tag":"OpenInfra","lede":"Complete cloud-infrastructure stack for the edge.","facts":["Bare-metal, VM and container workloads in one distributed edge platform.","Built for telecom, industrial IoT and ultra-low-latency use cases.","Governed by the OpenInfra Foundation."],"link":"https://www.starlingx.io"},{"slug":"canonical","name":"Canonical (Ubuntu)","cluster":"orch","layer":2,"country":"UK","tag":"UK - Ubuntu / OpenStack","lede":"Maker of Ubuntu with open building blocks for private and edge clouds.","facts":["MicroK8s and Sunbeam / Charmed OpenStack as the base for sovereign self-operated clouds.","UK-based - European, but outside the EU."],"link":"https://canonical.com"},{"slug":"kubermatic","name":"Kubermatic","cluster":"orch","layer":2,"country":"DE","tag":"DE - KKP / KubeOne","lede":"German Kubernetes-automation vendor from data center to edge.","facts":["KKP and KubeOne operate thousands of clusters consistently.","Spans bare metal, core data center and edge without oversized ops teams.","Positions Kubernetes as a sovereign operational substrate for apps and AI."],"link":"https://www.kubermatic.com"},{"slug":"nextcloud","name":"Nextcloud","cluster":"orch","layer":4,"country":"DE","tag":"DE - Collaboration","lede":"German open-source platform for sovereign collaboration and file storage.","facts":["A sovereign alternative to US SaaS for files, communication and office.","Runs on-premises or at EU providers - data stays under your own control."],"link":"https://nextcloud.com"},{"slug":"opennebula","name":"OpenNebula","cluster":"orch","layer":3,"country":"ES","tag":"ES - Telco edge cloud","lede":"Open-source platform for carrier-grade telco edge clouds, unifying VNFs, CNFs and AI workloads from core to edge.","facts":["Manages virtualized and containerized network functions plus AI workloads with multi-tenancy and no vendor lock-in.","Official Sylva Validation Platform - the Linux Foundation Europe telco-cloud standard backed by Orange, Deutsche Telekom, Telefonica, Vodafone and TIM.","Built for 5G neutral host, vRAN / AI-RAN, distributed NFV and 6G pilots, and for sovereign multi-tenant 'Telco AI Factories'.","From OpenNebula Systems (Spain); contributor to European IPCEI-CIS edge projects."],"link":"https://opennebula.io/ai-ready-telco-edge-cloud/"},{"slug":"sap","name":"SAP","cluster":"orch","layer":1,"country":"DE","tag":"DE - Delos Cloud","lede":"Enterprise-software leader and IPCEI-CIS partner with its own sovereignty cloud.","facts":["A direct IPCEI-CIS project partner.","Runs Delos Cloud (on Microsoft technology) as a sovereign cloud for German public administration."],"link":"https://www.sap.com"},{"slug":"sovereign-cloud-stack","name":"Sovereign Cloud Stack (SCS)","cluster":"orch","layer":1,"country":"DE","tag":"DE - Open source","lede":"Standardised open-source stack for sovereign clouds, funded by the German government.","facts":["Built on OpenStack and Kubernetes, with no proprietary dependencies.","Targeted at public administration and critical infrastructure.","GitOps-friendly and fully declarative as a basis for provider-independent clouds."],"link":"https://scs.community"},{"slug":"suse","name":"SUSE","cluster":"orch","layer":2,"country":"LU","tag":"LU/DE - Rancher / RKE2","lede":"European open-source vendor for sovereign Kubernetes management.","facts":["Rancher Prime and the hardened RKE2 distribution manage clusters with European governance.","Building a European Sovereign Stack of Linux and Kubernetes together with evroc.","Stewards the lightweight K3s distribution for the edge.","Domiciled in Luxembourg (SUSE S.A.) with roots and core engineering in Nuremberg, Germany; owned by Sweden's EQT."],"link":"https://www.suse.com"},{"slug":"adlink","name":"ADLINK","cluster":"hardware","layer":3,"country":"TW","tag":"MEC platforms","lede":"Edge computing platforms and MEC-ready servers.","facts":["Ruggedised hardware for telecom and industrial edge.","Carrier-grade and embedded systems for network-edge workloads."],"link":"https://www.adlinktech.com"},{"slug":"advantech","name":"Advantech","cluster":"hardware","layer":4,"country":"TW","tag":"Industrial edge","lede":"Industrial and edge computing hardware for IoT and the far edge.","facts":["Ruggedised edge servers, gateways and IoT controllers.","Widely deployed in manufacturing, transport and energy verticals."],"link":"https://www.advantech.com"},{"slug":"arm","name":"Arm","cluster":"hardware","layer":4,"country":"UK","tag":"UK - Architecture","lede":"Processor architecture powering most edge and device silicon.","facts":["Energy-efficient compute from gateways down to far-edge sensors.","Licensed broadly across edge SoC and appliance makers."],"link":"https://www.arm.com"},{"slug":"kontron","name":"Kontron","cluster":"hardware","layer":3,"country":"AT","tag":"AT - Edge servers","lede":"European maker of edge servers and carrier-grade MEC appliances.","facts":["Embedded and network-edge hardware for telecom and industrial sites.","Supplies ruggedised compute for far-edge and on-prem deployments.","Headquartered in Linz, Austria (the former S&T AG), with significant embedded-computing operations in Germany."],"link":"https://www.kontron.com"},{"slug":"siemens","name":"Siemens","cluster":"hardware","layer":4,"country":"DE","tag":"DE - Industrial Edge","lede":"Industrial Edge platform and hardware for factories and automation.","facts":["A direct IPCEI-CIS project partner.","Brings compute directly to production lines and machinery at the far edge."],"link":"https://www.siemens.com"},{"slug":"evroc","name":"evroc","cluster":"infra","layer":1,"country":"SE","tag":"SE - Hyperscale-sovereign","lede":"Swedish newcomer building what it calls Europe's first hyperscale sovereign cloud.","facts":["Positions itself as a hyperscale sovereign cloud with a fully European operational footprint.","Partners with SUSE for a fully sovereign Linux and Kubernetes stack (Sovereign Rancher).","Control-plane and metadata stay within EU jurisdiction."],"link":"https://evroc.com"},{"slug":"hetzner","name":"Hetzner","cluster":"infra","layer":1,"country":"DE","tag":"DE - Price/perf","lede":"Cost-efficient European infrastructure with a deliberately lean portfolio.","facts":["EU-compliant infrastructure at strong price-performance.","Offers no managed services by design.","Popular for self-managed Kubernetes clusters."],"link":"https://www.hetzner.com"},{"slug":"ionos","name":"IONOS","cluster":"infra","layer":1,"country":"DE","tag":"DE - Mid-market","lede":"Pragmatic cloud provider (United Internet) with German data residency.","facts":["Based in Montabaur, part of United Internet.","Wide GPU choice including Intel Gaudi as a non-NVIDIA option.","Strong in the mid-market with predictable pricing and human support."],"link":"https://www.ionos.com"},{"slug":"ovhcloud","name":"OVHcloud","cluster":"infra","layer":1,"country":"FR","tag":"FR - SEAL-3","lede":"Broadest European sovereignty cloud with deep certification.","facts":["Around 43 data centres across nine countries.","SecNumCloud qualification and SEAL-3, the top tier of the EU Cloud Sovereignty Framework.","Involved in the ECB digital-euro framework and runs a dedicated defence unit."],"link":"https://www.ovhcloud.com"},{"slug":"scaleway","name":"Scaleway","cluster":"infra","layer":1,"country":"FR","tag":"FR - iliad","lede":"Developer- and AI-focused sovereign cloud provider from France.","facts":["Bare metal, GPU instances and OpenAI-compatible inference APIs.","Reached SEAL-3 and won a standalone Cloud III slot.","Member of the 2026 EUR 180M EU framework deal."],"link":"https://www.scaleway.com"},{"slug":"stackit","name":"STACKIT","cluster":"infra","layer":1,"country":"DE","tag":"DE - Schwarz Group","lede":"Sovereign cloud of the Schwarz Group (Lidl/Kaufland), focused on industry and retail.","facts":["Reached SEAL-3 in the EU Cloud Sovereignty Framework.","Customer base weighted toward large industrial and retail buyers.","Part of the EUR 180M EU framework deal (April 2026) with Scaleway, Post Telecom and Proximus."],"link":"https://www.stackit.de"},{"slug":"t-systems-otc","name":"T-Systems / Open Telekom Cloud","cluster":"infra","layer":1,"country":"DE","tag":"DE - BSI C5","lede":"Deutsche Telekom's enterprise cloud for regulated customers.","facts":["The most enterprise-formal of the large EU sovereignty clouds.","BSI C5 attestation as a procurement prerequisite for regulated workloads."],"link":"https://www.t-systems.com"},{"slug":"8ra-ipcei-cis","name":"8ra / IPCEI-CIS","cluster":"std","layer":2,"country":"EU","tag":"EU - 12 states","lede":"The EU funding project for a multi-provider cloud-edge continuum - the federating backbone.","facts":["12 member states, ~120-150 industry and research partners, 19 direct projects.","EUR 1.2B of public funding, approved by the European Commission in late 2023.","The Lab8ra testbed links 14 organisations across five countries.","Contributes to the EU goal of 10,000 edge nodes by 2030 - provider-independent and federated."],"link":"https://www.8ra.com"},{"slug":"etsi-mec","name":"ETSI MEC","cluster":"std","layer":3,"country":"EU","tag":"MEC standard","lede":"The standards body that defines Multi-access Edge Computing.","facts":["ETSI's MEC ISG specifies the MEC reference architecture and service APIs.","Makes operator-edge applications portable and interoperable across networks.","The technical backbone of the 5G + MEC ecosystem."],"link":"https://www.etsi.org/technologies/multi-access-edge-computing"},{"slug":"gaia-x","name":"Gaia-X","cluster":"std","layer":1,"country":"EU","tag":"EU - Framework","lede":"European framework for federated, sovereign cloud and data infrastructure.","facts":["Standards for interoperability, portability and compliance.","A reference framework that sovereign providers align to."],"link":"https://gaia-x.eu"},{"slug":"gsma-open-gateway","name":"GSMA Open Gateway / CAMARA","cluster":"std","layer":3,"country":"INT","tag":"Telco APIs","lede":"Standardised network and edge APIs from the mobile industry.","facts":["Unifies developer access to carrier and edge capabilities across operators.","Makes telco-edge functions programmable and consumable by applications."],"link":"https://www.gsma.com/solutions-and-impact/gsma-open-gateway/"}]};
+
+const POS_LABEL = ["Regional / Sovereign Cloud","Edge Cloud (Aggregation)","Access / Network Edge (MEC)","Device / Far Edge"];
+let CLUSTERS={}, LAYERS=[], PLAYERS=[];
+
+document.getElementById('gh').href = REPO_URL + "/blob/main/CONTRIBUTING.md";
+document.getElementById('gh2').href = REPO_URL;
+
+boot();
+async function boot(){
+  CLUSTERS = BOOTSTRAP.clusters; LAYERS = BOOTSTRAP.layers;
+  let players = BOOTSTRAP.players;
+  try{
+    const r = await fetch('data/players.json',{cache:'no-store'});
+    if(r.ok){ const j = await r.json(); if(Array.isArray(j)&&j.length) players = j; }
+  }catch(e){ /* offline -> keep fallback */ }
+  PLAYERS = players;
+  render();
+}
+
+function render(){
+  const filters=document.getElementById('filters');filters.innerHTML='';
+  filters.appendChild(chip('all','All','var(--brand)',true));
+  Object.entries(CLUSTERS).forEach(([k,c])=>filters.appendChild(chip(k,c.label,c.color,false)));
+
+  const grid=document.getElementById('grid');grid.innerHTML='';const cols=[];
+  LAYERS.forEach((L,i)=>{
+    const wrap=document.createElement('div');
+    wrap.innerHTML=
+      `<div class="col-head"><div class="n">${L.n}</div>
+        <div class="col-title"><h3>${L.title}</h3>
+          <button class="info" aria-expanded="false" aria-label="Explain this tier">i</button></div>
+        <p>${L.sub}</p><div class="col-explain">${L.explain}</div></div>`;
+    const body=document.createElement('div');body.className='col-body';
+    wrap.querySelector('.col-head').appendChild(body);
+    const btn=wrap.querySelector('.info'),exp=wrap.querySelector('.col-explain');
+    btn.addEventListener('click',()=>{const o=exp.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+    grid.appendChild(wrap);cols[i+1]=body;
+  });
+
+  PLAYERS.forEach((p,idx)=>{
+    const c=CLUSTERS[p.cluster];if(!c||!cols[p.layer])return;
+    const b=document.createElement('button');
+    b.className='card';b.dataset.cluster=p.cluster;b.dataset.idx=idx;b.style.setProperty('--cdot',c.color);
+    b.setAttribute('aria-haspopup','dialog');
+    b.innerHTML=`<span class="name">${esc(p.name)}</span><span class="tag">${esc(p.tag||'')}</span><span class="tip">${esc(p.lede||'')}</span>`;
+    b.addEventListener('click',()=>openPanel(idx));
+    cols[p.layer].appendChild(b);
+  });
+
+  const legend=document.getElementById('legend');legend.innerHTML='';
+  Object.values(CLUSTERS).forEach(c=>{
+    const el=document.createElement('span');el.className='lg';
+    el.innerHTML=`<span class="dot" style="background:${c.color}"></span>${c.label}`;legend.appendChild(el);
+  });
+
+  document.getElementById('total').textContent=PLAYERS.length;
+  document.getElementById('count').textContent=PLAYERS.length;
+  wireFilters();apply();
+}
+
+function chip(key,label,color,pressed){
+  const b=document.createElement('button');b.className='chip';b.dataset.cluster=key;b.setAttribute('aria-pressed',pressed);
+  b.innerHTML=`<span class="dot" style="--cdot:${color}"></span>${label}`;return b;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+
+let active='all';const search=document.getElementById('search');
+function wireFilters(){
+  document.getElementById('filters').addEventListener('click',e=>{
+    const b=e.target.closest('.chip');if(!b)return;active=b.dataset.cluster;
+    document.querySelectorAll('#filters .chip').forEach(c=>c.setAttribute('aria-pressed',c===b));apply();
+  });
+}
+search.addEventListener('input',apply);
+function apply(){
+  const q=search.value.trim().toLowerCase();let shown=0;
+  document.querySelectorAll('.card').forEach(card=>{
+    const p=PLAYERS[+card.dataset.idx];
+    const text=(p.name+' '+(p.tag||'')+' '+(p.lede||'')+' '+(p.facts||[]).join(' ')).toLowerCase();
+    const ok=(active==='all'||card.dataset.cluster===active)&&(!q||text.includes(q));
+    card.classList.toggle('gone',!ok);card.classList.toggle('match',ok);if(ok)shown++;
+  });
+  document.body.classList.toggle('filtering',active!=='all'||!!q);
+  document.getElementById('count').textContent=shown;
+  document.querySelectorAll('.col-body').forEach(col=>{
+    const any=[...col.children].some(ch=>ch.classList.contains('card')&&!ch.classList.contains('gone'));
+    let hint=col.querySelector('.empty');
+    if(!any){if(!hint){hint=document.createElement('div');hint.className='empty';hint.textContent='—';col.appendChild(hint);}}
+    else if(hint)hint.remove();
+  });
+}
+
+const panel=document.getElementById('panel'),scrim=document.getElementById('scrim');let lastFocus=null;
+function openPanel(idx){
+  const p=PLAYERS[idx],c=CLUSTERS[p.cluster];lastFocus=document.activeElement;
+  document.querySelector('#p-cluster .dot').style.background=c.color;
+  document.querySelector('#p-cluster .lbl').textContent=c.label;
+  document.getElementById('p-name').textContent=p.name;
+  document.getElementById('p-tag').textContent=p.tag||'';
+  document.getElementById('p-lede').textContent=p.lede||'';
+  const pos=document.getElementById('p-pos');pos.innerHTML='';
+  for(let i=1;i<=4;i++){const s=document.createElement('div');s.className='seg'+(i===p.layer?' on':'');pos.appendChild(s);}
+  document.getElementById('p-pos-label').textContent=POS_LABEL[p.layer-1];
+  const ul=document.getElementById('p-facts');ul.innerHTML='';
+  (p.facts||[]).forEach(f=>{const li=document.createElement('li');li.textContent=f;ul.appendChild(li);});
+  const link=document.getElementById('p-link');
+  if(p.link){link.style.display='';link.href=p.link;}else{link.style.display='none';}
+  panel.classList.add('open');scrim.classList.add('open');panel.setAttribute('aria-hidden','false');
+  document.getElementById('close').focus();
+}
+function closePanel(){panel.classList.remove('open');scrim.classList.remove('open');panel.setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus();}
+document.getElementById('close').addEventListener('click',closePanel);
+scrim.addEventListener('click',closePanel);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.classList.contains('open'))closePanel();});
+</script>
+</body>
+</html>
