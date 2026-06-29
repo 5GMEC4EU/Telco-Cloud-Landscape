@@ -25,6 +25,7 @@ Thanks for helping make the European edge & MEC ecosystem more visible. An entry
 | `lede` | yes | **One** sentence (tooltip + intro). |
 | `facts` | yes | 2-4 concise bullets, in your own words. |
 | `link` | no | Official URL. |
+| `logo` | no | Logo path `logos/<slug>.svg`. Or just drop a file in `logos/` named after your slug. |
 
 ### `cluster` (role)
 
@@ -69,6 +70,12 @@ Pick the **centre of gravity** even if your solution spans several tiers.
 - `lede` is exactly one sentence. `facts` are short.
 - Check locally before the PR: `node scripts/build.mjs` (fails with the file name and
   the problem if something is off).
+
+## Logo (optional)
+
+Add a square-ish logo as `logos/<your-slug>.svg` (or `.png`/`.webp`). The build
+picks it up automatically. No logo? A coloured monogram is shown instead. See
+`logos/README.md` for guidelines.
 
 ## What does NOT belong in a PR
 

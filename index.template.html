@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edge & MEC Ecosystem Map — Europe</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root{
     --bg:#F5F9FB;--surface:#FFFFFF;--surface-2:#EAF2F5;
@@ -97,6 +95,12 @@
   .card:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
   .card .name{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:13.5px;color:var(--txt);line-height:1.2;overflow-wrap:anywhere}
   .card .tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.02em;color:var(--cdot);text-transform:uppercase;filter:brightness(.9);overflow-wrap:anywhere}
+  .card-head{display:flex;align-items:center;gap:9px}
+  .card-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+  .mark{flex:none;width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;border:1px solid var(--line)}
+  .mark img{width:100%;height:100%;object-fit:contain;padding:3px}
+  .mark.monogram{border:none;color:#fff;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:12px;letter-spacing:.01em}
+  .mark.big{width:48px;height:48px;border-radius:11px;font-size:19px;margin-bottom:14px}
   body.filtering .card{opacity:.22;filter:grayscale(.55)}
   body.filtering .card.match{opacity:1;filter:none}
   .card.gone{display:none}
@@ -191,6 +195,7 @@
 <aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="p-name" aria-hidden="true">
   <div class="panel-top">
     <button class="panel-close" id="close" aria-label="Close">✕</button>
+    <div id="p-mark-slot"></div>
     <div class="p-cluster" id="p-cluster"><span class="dot"></span><span class="lbl"></span></div>
     <div class="p-name" id="p-name"></div>
     <div class="p-tag" id="p-tag"></div>
@@ -252,7 +257,14 @@ function render(){
     const b=document.createElement('button');
     b.className='card';b.dataset.cluster=p.cluster;b.dataset.idx=idx;b.style.setProperty('--cdot',c.color);
     b.setAttribute('aria-haspopup','dialog');
-    b.innerHTML=`<span class="name">${esc(p.name)}</span><span class="tag">${esc(p.tag||'')}</span><span class="tip">${esc(p.lede||'')}</span>`;
+    const head=document.createElement('span');head.className='card-head';
+    head.appendChild(buildMark(p,c,false));
+    const txt=document.createElement('span');txt.className='card-text';
+    txt.innerHTML=`<span class="name">${esc(p.name)}</span><span class="tag">${esc(p.tag||'')}</span>`;
+    head.appendChild(txt);
+    b.appendChild(head);
+    const tip=document.createElement('span');tip.className='tip';tip.textContent=p.lede||'';
+    b.appendChild(tip);
     b.addEventListener('click',()=>openPanel(idx));
     cols[p.layer].appendChild(b);
   });
@@ -273,6 +285,21 @@ function chip(key,label,color,pressed){
   b.innerHTML=`<span class="dot" style="--cdot:${color}"></span>${label}`;return b;
 }
 function esc(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+function monogram(name){
+  const clean=name.replace(/\(.*?\)/g,'').replace(/[^A-Za-z0-9 /-]/g,' ').trim();
+  const words=clean.split(/[\s/]+/).filter(w=>/[A-Za-z0-9]/.test(w));
+  let m = words.length>=2 ? (words[0][0]+words[1][0]) : (words[0]||name).slice(0,2);
+  return m.toUpperCase();
+}
+function buildMark(p,c,big){
+  const m=document.createElement('span');m.className='mark'+(big?' big':'');
+  if(p.logo){
+    const img=document.createElement('img');img.src=p.logo;img.alt=p.name+' logo';img.loading='lazy';
+    img.addEventListener('error',()=>{m.classList.add('monogram');m.style.background=c.color;m.textContent=monogram(p.name);});
+    m.appendChild(img);
+  } else { m.classList.add('monogram');m.style.background=c.color;m.textContent=monogram(p.name); }
+  return m;
+}
 
 let active='all';const search=document.getElementById('search');
 function wireFilters(){
@@ -303,6 +330,7 @@ function apply(){
 const panel=document.getElementById('panel'),scrim=document.getElementById('scrim');let lastFocus=null;
 function openPanel(idx){
   const p=PLAYERS[idx],c=CLUSTERS[p.cluster];lastFocus=document.activeElement;
+  const slot=document.getElementById('p-mark-slot');slot.innerHTML='';slot.appendChild(buildMark(p,c,true));
   document.querySelector('#p-cluster .dot').style.background=c.color;
   document.querySelector('#p-cluster .lbl').textContent=c.label;
   document.getElementById('p-name').textContent=p.name;

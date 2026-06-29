@@ -42,6 +42,7 @@ Add or correct an organisation with a single JSON file — see
 partners/            # source of truth: one JSON file per organisation
   _TEMPLATE.json     #   template for contributions
 schema/              # JSON schema for entries (editor autocompletion)
+logos/               # one logo file per org, named <slug>.svg (optional)
 scripts/
   seed.mjs           #   cluster/tier metadata + initial dataset
   build.mjs          #   validates partners/ -> data/players.json + index.html
@@ -68,7 +69,7 @@ Enable GitHub Pages (Settings → Pages → Source: GitHub Actions). Then add a
 *Custom HTML* block to your post:
 
 ```html
-<iframe src="https://YOUR-ORG.github.io/euro-edge-continuum/"
+<iframe src="https://5gmec4eu.github.io/Telco-Cloud-Landscape/"
         style="width:100%;border:0;height:1500px" loading="lazy"
         title="Edge & MEC Ecosystem Map"></iframe>
 ```
