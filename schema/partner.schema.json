@@ -21,6 +21,7 @@
     "lede": { "type": "string", "description": "One sentence shown in the tooltip and as the intro." },
     "facts": { "type": "array", "minItems": 1, "items": { "type": "string" },
       "description": "2-4 concise bullet points in your own words." },
-    "link": { "type": "string", "description": "Official URL (optional)." }
+    "link": { "type": "string", "description": "Official URL (optional)." },
+    "logo": { "type": "string", "description": "Optional logo path, e.g. logos/<slug>.svg. If omitted, a file named logos/<slug>.* is auto-detected; otherwise a monogram is shown." }
   }
 }
