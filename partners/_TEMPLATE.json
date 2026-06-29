@@ -1,0 +1,17 @@
+{
+  "$schema": "../schema/partner.schema.json",
+  "slug": "my-organisation",
+  "name": "My Organisation",
+  "cluster": "platform",
+  "layer": 3,
+  "country": "DE",
+  "tag": "DE - short label",
+  "lede": "One sentence describing the organisation and its role in the edge & MEC continuum.",
+  "facts": [
+    "First concise fact - what exactly is contributed.",
+    "Second fact - certification, reach or distinctive trait.",
+    "Optional third fact."
+  ],
+  "link": "https://www.my-organisation.eu",
+  "logo": "logos/my-organisation.svg"
+}
