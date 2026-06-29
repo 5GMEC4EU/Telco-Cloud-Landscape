@@ -4,7 +4,7 @@
 // 3) validates each entry
 // 4) writes data/players.json
 // 5) injects an offline fallback bootstrap into index.html (from index.template.html)
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { CLUSTERS, LAYERS } from "./seed.mjs";
@@ -12,6 +12,17 @@ import { CLUSTERS, LAYERS } from "./seed.mjs";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const clusterKeys = Object.keys(CLUSTERS);
 const errors = [];
+
+// map slug -> logo path, from any file in /logos named <slug>.<ext>
+const LOGO_DIR = join(ROOT, "logos");
+const LOGO_EXT = ["svg", "png", "webp", "jpg", "jpeg"];
+const logoBySlug = {};
+if (existsSync(LOGO_DIR)) {
+  for (const f of readdirSync(LOGO_DIR)) {
+    const m = f.match(/^(.+)\.([a-z0-9]+)$/i);
+    if (m && LOGO_EXT.includes(m[2].toLowerCase())) logoBySlug[m[1]] = `logos/${f}`;
+  }
+}
 
 function validate(p, file) {
   const str = (k) => {
@@ -41,6 +52,8 @@ for (const f of files) {
   validate(p, f);
   if (seen.has(p.slug)) errors.push(`${f}: duplicate slug "${p.slug}"`);
   seen.add(p.slug);
+  // logo: explicit field wins; otherwise auto-match a file in /logos
+  if (!p.logo && logoBySlug[p.slug]) p.logo = logoBySlug[p.slug];
   players.push(p);
 }
 
