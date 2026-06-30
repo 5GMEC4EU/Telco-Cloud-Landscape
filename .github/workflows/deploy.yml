@@ -23,12 +23,17 @@ jobs:
         with:
           node-version: 20
       - name: Validate & build
-        run: node scripts/build.mjs
+        run: |
+          node scripts/build.mjs
+          node scripts/standalone.mjs
       - name: Assemble Pages artifact
         run: |
           mkdir -p _site/data
           cp index.html _site/index.html
+          cp standalone.html _site/standalone.html
           cp data/players.json _site/data/players.json
+          cp -r fonts _site/fonts
+          if [ -d logos ]; then cp -r logos _site/logos; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
