@@ -275,5 +275,39 @@ export const PLAYERS = [
     facts:[
       "Unifies developer access to carrier and edge capabilities across operators.",
       "Makes telco-edge functions programmable and consumable by applications."
-    ], link:"https://www.gsma.com/solutions-and-impact/gsma-open-gateway/" }
+    ], link:"https://www.gsma.com/solutions-and-impact/gsma-open-gateway/" },
+  { slug:"simpl", name:"Simpl", cluster:"std", layer:2, country:"EU", tag:"EU - Cloud-to-edge middleware",
+    lede:"The EU's open-source smart middleware for cloud-to-edge federations and data spaces.",
+    facts:[
+      "Enables cloud-to-edge federations and powers the major data initiatives funded by the European Commission.",
+      "Three parts: Simpl-Open (the open-source stack), Simpl-Labs (test environment) and Simpl-Live (instances for the data spaces).",
+      "Awarded as a ~EUR 41M EU contract; underpins the Common European Data Spaces and the European cloud federation."
+    ], link:"https://digital-strategy.ec.europa.eu/en/policies/simpl" },
+  { slug:"eucloudedgeiot", name:"EUCloudEdgeIoT", cluster:"std", layer:2, country:"EU", tag:"EU - CEI continuum",
+    lede:"EU initiative federating Europe's cloud-edge-IoT research into a shared continuum.",
+    facts:[
+      "Brings together research projects, suppliers and adopters to build the Cloud-Edge-IoT continuum.",
+      "Coordinates the MetaOS cluster - aerOS, ICOS, FLUIDOS, NebulOuS, NEMO and NEPHELE (~EUR 54M) - building a 'meta operating system' for the edge-cloud continuum.",
+      "Runs concertation, task forces and open calls across the EU edge ecosystem."
+    ], link:"https://eucloudedgeiot.eu" },
+  { slug:"sns-ju", name:"SNS JU", cluster:"std", layer:3, country:"EU", tag:"EU - 5G/6G",
+    lede:"EU public-private partnership for European leadership in 5G and 6G - the network edge's R&D engine.",
+    facts:[
+      "Jointly led by the European Commission and the 6G-IA; EUR 900M EU budget for 2021-2027, matched by industry.",
+      "Announced EUR 116M for 20 new 6G projects at MWC 2026, bringing the portfolio to 100 projects.",
+      "Edge / MEC is central: AI-native networks and cloud-edge orchestration run through its projects."
+    ], link:"https://smart-networks.europa.eu/" },
+  { slug:"sylva", name:"Sylva", cluster:"std", layer:2, country:"EU", tag:"LF Europe - Telco cloud",
+    lede:"Linux Foundation Europe's open-source telco-cloud reference stack.",
+    facts:[
+      "Backed by Europe's major operators - Orange, Deutsche Telekom, Telefonica, Vodafone and TIM.",
+      "A validated, vendor-neutral cloud platform for telco and edge (MEC) workloads.",
+      "OpenNebula is an official Sylva Validation Platform."
+    ], link:"https://sylvaproject.org" },
+  { slug:"eucs", name:"EUCS", cluster:"std", layer:1, country:"EU", tag:"ENISA - Cloud cert",
+    lede:"The EU cybersecurity certification scheme for cloud services.",
+    facts:[
+      "Developed under ENISA to harmonise cloud security assurance across the EU.",
+      "A companion to Gaia-X and the Cloud Sovereignty Framework for trusted cloud and edge services."
+    ], link:"https://www.enisa.europa.eu" }
 ];
