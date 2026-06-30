@@ -12,7 +12,8 @@
       "Leads a direct IPCEI-CIS project and is engaged in the planned IPCEI-AI.",
       "Runs the Open Telekom Cloud via T-Systems and targets a central role in Europe's industrial AI cloud."
     ],
-    "link": "https://www.telekom.com"
+    "link": "https://www.telekom.com",
+    "logo": "logos/deutsche-telekom.svg"
   },
   {
     "slug": "orange",
@@ -26,7 +27,8 @@
       "One of the five operators in the federated European Edge Continuum demo.",
       "Runs its own direct project inside IPCEI-CIS / the 8ra initiative."
     ],
-    "link": "https://www.orange.com"
+    "link": "https://www.orange.com",
+    "logo": "logos/orange.svg"
   },
   {
     "slug": "telefonica",
@@ -41,7 +43,8 @@
       "Has begun deploying edge nodes across Spain.",
       "Leads a direct IPCEI-CIS project within 8ra."
     ],
-    "link": "https://www.telefonica.com"
+    "link": "https://www.telefonica.com",
+    "logo": "logos/telefonica.svg"
   },
   {
     "slug": "tim",
@@ -55,7 +58,8 @@
       "One of the five federated network operators.",
       "Leads a direct IPCEI-CIS project."
     ],
-    "link": "https://www.gruppotim.it"
+    "link": "https://www.gruppotim.it",
+    "logo": "logos/tim.svg"
   },
   {
     "slug": "vodafone",
@@ -70,7 +74,8 @@
       "Enables application deployment through a single entry point across its European footprint.",
       "Headquartered in Newbury, UK, with major European operations (Germany and others)."
     ],
-    "link": "https://www.vodafone.com"
+    "link": "https://www.vodafone.com",
+    "logo": "logos/vodafone.svg"
   },
   {
     "slug": "edgex-foundry",
@@ -99,7 +104,8 @@
       "Single small binary with a minimal footprint, originated at Rancher / SUSE.",
       "Ideal for edge gateways, constrained sites and far-edge clusters."
     ],
-    "link": "https://k3s.io"
+    "link": "https://k3s.io",
+    "logo": "logos/k3s.svg"
   },
   {
     "slug": "kubeedge",
@@ -247,7 +253,8 @@
       "Built for 5G neutral host, vRAN / AI-RAN, distributed NFV and 6G pilots, and for sovereign multi-tenant 'Telco AI Factories'.",
       "From OpenNebula Systems (Spain); contributor to European IPCEI-CIS edge projects."
     ],
-    "link": "https://opennebula.io/ai-ready-telco-edge-cloud/"
+    "link": "https://opennebula.io/ai-ready-telco-edge-cloud/",
+    "logo": "logos/opennebula.svg"
   },
   {
     "slug": "sap",
@@ -501,6 +508,35 @@
     "link": "https://www.etsi.org/technologies/multi-access-edge-computing"
   },
   {
+    "slug": "eucloudedgeiot",
+    "name": "EUCloudEdgeIoT",
+    "cluster": "std",
+    "layer": 2,
+    "country": "EU",
+    "tag": "EU - CEI continuum",
+    "lede": "EU initiative federating Europe's cloud-edge-IoT research into a shared continuum.",
+    "facts": [
+      "Brings together research projects, suppliers and adopters to build the Cloud-Edge-IoT continuum.",
+      "Coordinates the MetaOS cluster - aerOS, ICOS, FLUIDOS, NebulOuS, NEMO and NEPHELE (~EUR 54M) - building a 'meta operating system' for the edge-cloud continuum.",
+      "Runs concertation, task forces and open calls across the EU edge ecosystem."
+    ],
+    "link": "https://eucloudedgeiot.eu"
+  },
+  {
+    "slug": "eucs",
+    "name": "EUCS",
+    "cluster": "std",
+    "layer": 1,
+    "country": "EU",
+    "tag": "ENISA - Cloud cert",
+    "lede": "The EU cybersecurity certification scheme for cloud services.",
+    "facts": [
+      "Developed under ENISA to harmonise cloud security assurance across the EU.",
+      "A companion to Gaia-X and the Cloud Sovereignty Framework for trusted cloud and edge services."
+    ],
+    "link": "https://www.enisa.europa.eu"
+  },
+  {
     "slug": "gaia-x",
     "name": "Gaia-X",
     "cluster": "std",
@@ -527,5 +563,50 @@
       "Makes telco-edge functions programmable and consumable by applications."
     ],
     "link": "https://www.gsma.com/solutions-and-impact/gsma-open-gateway/"
+  },
+  {
+    "slug": "simpl",
+    "name": "Simpl",
+    "cluster": "std",
+    "layer": 2,
+    "country": "EU",
+    "tag": "EU - Cloud-to-edge middleware",
+    "lede": "The EU's open-source smart middleware for cloud-to-edge federations and data spaces.",
+    "facts": [
+      "Enables cloud-to-edge federations and powers the major data initiatives funded by the European Commission.",
+      "Three parts: Simpl-Open (the open-source stack), Simpl-Labs (test environment) and Simpl-Live (instances for the data spaces).",
+      "Awarded as a ~EUR 41M EU contract; underpins the Common European Data Spaces and the European cloud federation."
+    ],
+    "link": "https://digital-strategy.ec.europa.eu/en/policies/simpl"
+  },
+  {
+    "slug": "sns-ju",
+    "name": "SNS JU",
+    "cluster": "std",
+    "layer": 3,
+    "country": "EU",
+    "tag": "EU - 5G/6G",
+    "lede": "EU public-private partnership for European leadership in 5G and 6G - the network edge's R&D engine.",
+    "facts": [
+      "Jointly led by the European Commission and the 6G-IA; EUR 900M EU budget for 2021-2027, matched by industry.",
+      "Announced EUR 116M for 20 new 6G projects at MWC 2026, bringing the portfolio to 100 projects.",
+      "Edge / MEC is central: AI-native networks and cloud-edge orchestration run through its projects."
+    ],
+    "link": "https://smart-networks.europa.eu/"
+  },
+  {
+    "slug": "sylva",
+    "name": "Sylva",
+    "cluster": "std",
+    "layer": 2,
+    "country": "EU",
+    "tag": "LF Europe - Telco cloud",
+    "lede": "Linux Foundation Europe's open-source telco-cloud reference stack.",
+    "facts": [
+      "Backed by Europe's major operators - Orange, Deutsche Telekom, Telefonica, Vodafone and TIM.",
+      "A validated, vendor-neutral cloud platform for telco and edge (MEC) workloads.",
+      "OpenNebula is an official Sylva Validation Platform."
+    ],
+    "link": "https://sylvaproject.org"
   }
 ]
