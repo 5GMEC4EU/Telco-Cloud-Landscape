@@ -20,6 +20,8 @@ This map sits in the context of the EU's [Communication on European Tech Soverei
 and the EU Open Source Strategy](https://digital-strategy.ec.europa.eu/en/library/communication-european-tech-sovereignty-accompanied-eu-open-source-strategy)
 (European Commission, June 2026).
 
+**Standards & Initiatives** are not placed on a single tier: they render as a **cross-cutting band** beneath the grid, because frameworks, standards and EU initiatives (ETSI MEC, Gaia-X, 8ra/IPCEI-CIS, Simpl, EUCloudEdgeIoT, SNS JU, Sylva, EUCS) span the whole continuum rather than one layer.
+
 ## Roles (clusters)
 
 `telco` MEC & Telco Edge · `platform` Edge Software Platforms · `orch` Cloud-Native &
