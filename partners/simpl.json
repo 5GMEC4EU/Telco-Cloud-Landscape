@@ -1,0 +1,15 @@
+{
+  "slug": "simpl",
+  "name": "Simpl",
+  "cluster": "std",
+  "layer": 2,
+  "country": "EU",
+  "tag": "EU - Cloud-to-edge middleware",
+  "lede": "The EU's open-source smart middleware for cloud-to-edge federations and data spaces.",
+  "facts": [
+    "Enables cloud-to-edge federations and powers the major data initiatives funded by the European Commission.",
+    "Three parts: Simpl-Open (the open-source stack), Simpl-Labs (test environment) and Simpl-Live (instances for the data spaces).",
+    "Awarded as a ~EUR 41M EU contract; underpins the Common European Data Spaces and the European cloud federation."
+  ],
+  "link": "https://digital-strategy.ec.europa.eu/en/policies/simpl"
+}

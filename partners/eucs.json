@@ -1,0 +1,14 @@
+{
+  "slug": "eucs",
+  "name": "EUCS",
+  "cluster": "std",
+  "layer": 1,
+  "country": "EU",
+  "tag": "ENISA - Cloud cert",
+  "lede": "The EU cybersecurity certification scheme for cloud services.",
+  "facts": [
+    "Developed under ENISA to harmonise cloud security assurance across the EU.",
+    "A companion to Gaia-X and the Cloud Sovereignty Framework for trusted cloud and edge services."
+  ],
+  "link": "https://www.enisa.europa.eu"
+}

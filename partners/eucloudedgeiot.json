@@ -1,0 +1,15 @@
+{
+  "slug": "eucloudedgeiot",
+  "name": "EUCloudEdgeIoT",
+  "cluster": "std",
+  "layer": 2,
+  "country": "EU",
+  "tag": "EU - CEI continuum",
+  "lede": "EU initiative federating Europe's cloud-edge-IoT research into a shared continuum.",
+  "facts": [
+    "Brings together research projects, suppliers and adopters to build the Cloud-Edge-IoT continuum.",
+    "Coordinates the MetaOS cluster - aerOS, ICOS, FLUIDOS, NebulOuS, NEMO and NEPHELE (~EUR 54M) - building a 'meta operating system' for the edge-cloud continuum.",
+    "Runs concertation, task forces and open calls across the EU edge ecosystem."
+  ],
+  "link": "https://eucloudedgeiot.eu"
+}

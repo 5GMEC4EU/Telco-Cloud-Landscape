@@ -1,0 +1,15 @@
+{
+  "slug": "sns-ju",
+  "name": "SNS JU",
+  "cluster": "std",
+  "layer": 3,
+  "country": "EU",
+  "tag": "EU - 5G/6G",
+  "lede": "EU public-private partnership for European leadership in 5G and 6G - the network edge's R&D engine.",
+  "facts": [
+    "Jointly led by the European Commission and the 6G-IA; EUR 900M EU budget for 2021-2027, matched by industry.",
+    "Announced EUR 116M for 20 new 6G projects at MWC 2026, bringing the portfolio to 100 projects.",
+    "Edge / MEC is central: AI-native networks and cloud-edge orchestration run through its projects."
+  ],
+  "link": "https://smart-networks.europa.eu/"
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "sylva",
+  "name": "Sylva",
+  "cluster": "std",
+  "layer": 2,
+  "country": "EU",
+  "tag": "LF Europe - Telco cloud",
+  "lede": "Linux Foundation Europe's open-source telco-cloud reference stack.",
+  "facts": [
+    "Backed by Europe's major operators - Orange, Deutsche Telekom, Telefonica, Vodafone and TIM.",
+    "A validated, vendor-neutral cloud platform for telco and edge (MEC) workloads.",
+    "OpenNebula is an official Sylva Validation Platform."
+  ],
+  "link": "https://sylvaproject.org"
+}
