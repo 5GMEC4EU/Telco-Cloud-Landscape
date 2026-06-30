@@ -463,20 +463,6 @@
     "link": "https://www.stackit.de"
   },
   {
-    "slug": "t-systems-otc",
-    "name": "T-Systems / Open Telekom Cloud",
-    "cluster": "infra",
-    "layer": 1,
-    "country": "DE",
-    "tag": "DE - BSI C5",
-    "lede": "Deutsche Telekom's enterprise cloud for regulated customers.",
-    "facts": [
-      "The most enterprise-formal of the large EU sovereignty clouds.",
-      "BSI C5 attestation as a procurement prerequisite for regulated workloads."
-    ],
-    "link": "https://www.t-systems.com"
-  },
-  {
     "slug": "8ra-ipcei-cis",
     "name": "8ra / IPCEI-CIS",
     "cluster": "std",
