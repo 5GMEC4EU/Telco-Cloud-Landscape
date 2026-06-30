@@ -262,11 +262,11 @@
     "cluster": "orch",
     "layer": 1,
     "country": "DE",
-    "tag": "DE - Delos Cloud",
+    "tag": "DE - SAP Sovereign Cloud",
     "lede": "Enterprise-software leader and IPCEI-CIS partner with its own sovereignty cloud.",
     "facts": [
       "A direct IPCEI-CIS project partner.",
-      "Runs Delos Cloud (on Microsoft technology) as a sovereign cloud for German public administration."
+      "SAP Sovereign Cloud is a dedicated environment designed for government agencies, defense contractors, and heavily regulated industries."
     ],
     "link": "https://www.sap.com"
   },
